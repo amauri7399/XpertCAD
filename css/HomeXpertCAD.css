@@ -12128,7 +12128,7 @@ nav.navbar {
     z-index: 10;
     position: fixed;
     box-shadow: none;
-    background-color: transparent;
+    background-color: #fff;
     transition: box-shadow .3s, background-color .3s;
 }
 
@@ -12837,4 +12837,18 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
     .header .header-wrapper h1 {
         font-size: 4rem;
     }
+}
+
+._fondo1:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: url(https://intlum.com/wp-content/themes/intlum/images/core-ex-bg.png) repeat;
+    top: 0;
+    z-index: -1;
+}
+
+.noHover {
+    pointer-events: none;
 }
