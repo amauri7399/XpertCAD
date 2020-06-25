@@ -11563,7 +11563,7 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
 .zoom-out-intro .header-wrapper {
     position: relative;
     z-index: 1;
-    background-color: #ff9d00;
+    background-color: #464545ce;
 }
 
 .zoom-out-intro .laptop-preview-sizer {
