@@ -1,11 +1,3 @@
-/*
- * Startup v1.0.4
- * Materialize theme
- * http://materializecss.com/themes.html
- * Personal Use License
- * by Alan Chang
- */
-
 .materialize-red {
     background-color: #e51c23 !important;
 }
@@ -4670,6 +4662,19 @@ h3 {
     font-weight: 400;
 }
 
+@media screen and (min-width: 601px) {
+    .h3 {
+        font-size: 48px;
+        ;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .h3 {
+        font-size: 24px;
+    }
+}
+
 h4 {
     font-size: 34px;
     line-height: 110%;
@@ -4687,7 +4692,7 @@ h4 {
 
 @media screen and (max-width: 600px) {
     .h4 {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 110%;
         letter-spacing: 0.25px;
     }
@@ -4906,6 +4911,18 @@ small {
     font-weight: 300;
 }
 
+@media screen and (min-width: 601px) {
+    .card .card-title {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card .card-title {
+        font-size: 16px;
+    }
+}
+
 .card .card-title.activator {
     cursor: pointer;
 }
@@ -5028,6 +5045,48 @@ small {
     top: 0;
     bottom: 0;
     width: 100%;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.postergrad {
+    display: block;
+    position: relative;
+}
+
+.postergrad::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+    /* IE6-9 */
+}
+
+.poster {
+    display: block;
+}
+
+.banner:after {
+    background-image: linear-gradient(120deg, #eaee44, #33d0ff);
+    background-color: #333;
+    opacity: .7;
+    mix-blend-mode: color;
+    mix-blend-mode: hard-light;
 }
 
 .card .card-image .card-title {
@@ -5037,6 +5096,19 @@ small {
     left: 0;
     max-width: 100%;
     padding: 24px;
+}
+
+.zoom-effect-container:hover .card-image img {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+.zoom-effect-container {
+    float: left;
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .card .card-content {
@@ -10878,7 +10950,7 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
 .avatar-wrapper:hover::after {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
-    border-color: #42c4ac;
+    border-color: #ff8f00;
     transition: border-color 0.2s, -webkit-transform 0.2s cubic-bezier(0.06, 0.59, 0.24, 1.55);
     transition: transform 0.2s cubic-bezier(0.06, 0.59, 0.24, 1.55), border-color 0.2s;
     transition: transform 0.2s cubic-bezier(0.06, 0.59, 0.24, 1.55), border-color 0.2s, -webkit-transform 0.2s cubic-bezier(0.06, 0.59, 0.24, 1.55);
@@ -11491,6 +11563,7 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
 .zoom-out-intro .header-wrapper {
     position: relative;
     z-index: 1;
+    background-color: #ff9d00d7;
 }
 
 .zoom-out-intro .laptop-preview-sizer {
@@ -12851,4 +12924,9 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
 
 .noHover {
     pointer-events: none;
+}
+
+.centered {
+    align-items: center;
+    margin: 5%;
 }
