@@ -11563,7 +11563,7 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
 .zoom-out-intro .header-wrapper {
     position: relative;
     z-index: 1;
-    background-color: #ff9d00d7;
+    background-color: #ff9d00;
 }
 
 .zoom-out-intro .laptop-preview-sizer {
@@ -12340,7 +12340,7 @@ nav.navbar ul a:hover {
 }
 
 .header .header-wrapper .read-more:active {
-    -webkit-transform: translateY(1px);
+    -webkit-transform: translateY(2px);
     transform: translateY(1px);
     color: #63f0d6;
 }
@@ -12929,4 +12929,16 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
 .centered {
     align-items: center;
     margin: 5%;
+}
+
+.hero-video {
+    background-color: black;
+    clip-path: url(#rounded-rectangle);
+    top: 0;
+    right: 0;
+    height: auto;
+}
+
+video {
+    object-fit: contain;
 }
