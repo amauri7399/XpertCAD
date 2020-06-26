@@ -4657,7 +4657,7 @@ h2 {
 h3 {
     font-size: 48px;
     line-height: 110%;
-    margin: 1.46rem 0 1.168rem 0;
+    margin: 0 0 1.168rem 0;
     letter-spacing: 0px;
     font-weight: 400;
 }
@@ -6176,6 +6176,7 @@ button.btn-floating {
     position: relative;
     transition: opacity .4s;
     -webkit-backface-visibility: hidden;
+    width: 900px;
 }
 
 .materialboxed:hover:not(.active) {
