@@ -11626,8 +11626,8 @@ only screen and (max-device-width: 641px) and (orientation: landscape) {
     left: 50%;
     -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
-    width: 141.42%;
-    padding-bottom: 141.42%;
+    width: 105%;
+    padding-bottom: 105%;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.95);
     z-index: -1;
@@ -12324,13 +12324,12 @@ nav.navbar ul a:hover {
     margin: 1rem 0;
     font-weight: 600;
     font-size: 6rem;
-    text-transform: uppercase;
 }
 
 .header .header-wrapper .tagline {
     display: block;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 34px;
     font-weight: 200;
 }
 
