@@ -2164,6 +2164,7 @@
             /* 2 */
             -webkit-text-size-adjust: 100%;
             /* 2 */
+            scroll-behavior: smooth;
         }
         /**
  * Remove default margin.
@@ -11784,7 +11785,7 @@
             background-attachment: fixed;
             background-size: cover;
             background-blend-mode: overlay;
-            background-image: url("../images/Aprende/Quien puede aprender.jpg"), linear-gradient(90deg, #000000 15%, #ebeeee42 74%);
+            background-image: url("../images/Aprende/Quien puede aprender.jpg"), linear-gradient(90deg, #000000 15%, #ebeeee26 74%);
         }
         
         .background.portrait img {
@@ -12868,4 +12869,23 @@
             border: 1px solid #ff8f00;
             width: 120px;
             float: left;
+        }
+        
+        hr.left1azul1 {
+            border: 1px solid #ff8f00;
+            width: 120px;
+            float: center;
+        }
+        
+        div.scroll-down-arrow {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 60px;
+            width: 50px;
+            height: 28px;
+            opacity: 1;
+            z-index: 5000;
+            margin: auto;
+            cursor: pointer;
         }
