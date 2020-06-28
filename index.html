@@ -13,11 +13,56 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
+    <style>
+        .tabs-vertical .tabs {
+            height: auto;
+            -ms-flex-direction: column;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            display: -webkit-flex;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .tabs-vertical .tab {
+            width: 100%;
+            margin: 2%;
+        }
+        
+        .tabs-vertical .tab .active {
+            -moz-transition: border-color .5s ease;
+            -o-transition: border-color .5s ease;
+            -webkit-transition: border-color .5s ease;
+            transition: border-color .5s ease;
+        }
+        
+        .tabs-vertical .tab h5 {
+            transition: cubic-bezier(0.23, 1, 0.320, 1);
+            color: rgb(209, 209, 209);
+            margin: 1px;
+            font-weight: 300;
+        }
+        
+        .tabs-vertical .tab h5:hover {
+            color: rgb(255, 255, 255);
+            font-weight: 400;
+            border-bottom: 1px solid #ff8f00;
+            width: 70px;
+            height: 30px;
+        }
+        
+        .tabs-vertical .indicator {
+            display: none;
+        }
+        
+        .tabs-vertical>.tab-content .active {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-    <a class="waves-effect waves-light btn amber darken-3 SideNavBott btnfixed " id="SideNavBott" style=" font-weight: 400; z-index: 99; 
+    <a class="waves-effect waves-light btn amber darken-3 SideNavBott btnfixed " id="SideNavBott" style=" font-weight: 400;  
     ">Noticias
      </a>
 
@@ -45,10 +90,10 @@
 
                     <li><a href="#">¿Quiénes somos?</a></li>
                     <li><a href="#" class="noHover grey-text text-darken-1 " style="font-size:30px; font-weight: 100; margin: 0 1rem;">|</a></li>
-                    <li><button class="waves-effect waves-light btn amber darken-3 " style="
+                    <li><a href="SingUp.html" class="waves-effect waves-light btn amber darken-3 " style="
                 padding-left: 24px;
                 padding-right: 24px; border-radius: 5px;  font-weight: 400; margin: 0 1rem; 
-            ">Iniciar sesión</button></li>
+            ">Iniciar sesión</a></li>
                 </ul>
                 <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons black-text">menu</i></a>
             </div>
@@ -91,10 +136,7 @@
                         </div>
                     </div>
                     <div class="col s12 m12 l6 xl6">
-
                         <img class="responsive-img " src="images/MisterX.png">
-
-
                     </div>
                 </div>
             </div>
@@ -128,6 +170,75 @@
 
         </div>
 
+        <div class="section  white">
+            <div class="row">
+                <div class="col s12 m7 l8 xl8 feature right-in-out fade-in-out " style="background-color: rgb(255, 255, 255);">
+                    <div class="container">
+                        <div class="tabs-vertical">
+                            <div class="col s12">
+                                <div id="primero" class="tab-content active" style="margin: 100px; ">
+                                    <img class="responsive-img " src="images/Aprende/Aprendesobreloqemásteaposiona.jpg" style=" box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22); 
+                                    ">
+                                </div>
+                                <div id="segundo" class="tab-content" style="margin: 100px;">
+                                    <img class="responsive-img " src="images/Aprende/Conocimiento especialistas.JPG" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22); 
+                                    ">
+                                </div>
+                                <div id="tercero" class="tab-content" style="margin: 100px;">
+                                    <img class="responsive-img " src="images/Crea/Administra.jpg" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22);
+                                    ">
+                                </div>
+                                <div id="cuarto" class="tab-content" style="margin: 100px;">
+                                    <img class="responsive-img " src="images/Crea/Academia.jpg" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22);
+                                    ">
+                                </div>
+                                <div id="quinto" class="tab-content" style="margin: 100px;">
+                                    <img class="responsive-img " src="images/Crea/Desarrolla.jpg" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22);
+                                    ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col s12 m4 l4 xl4 " style="background-color: #212121 ; height: 600px; border-radius: 10px 0 0 10px;">
+
+                    <div class="tabs-vertical " style="margin-top: 110px; margin-bottom: 100px;">
+                        <div class="col s12 " style="margin: auto; ">
+                            <ul class="tabs blue grey darken-4 ">
+                                <li class="tab " style="text-align: left; ">
+                                    <a class="active " href="#primero ">
+                                        <h5>TODO EN UNA SOLA PLATAFORMA</h5>
+                                    </a>
+                                </li>
+                                <li class="tab " style="text-align: left; ">
+                                    <a href="#segundo ">
+                                        <h5>DISPONIBLE 24/7 Y SIN INSTALACIÓN</h5>
+                                    </a>
+                                </li>
+                                <li class="tab " style="text-align: left; ">
+                                    <a href="#tercero ">
+                                        <h5>MONITOREO DESDE UN SOLO PANEL</h5>
+                                    </a>
+                                </li>
+                                <li class="tab " style="text-align: left; ">
+                                    <a href="#cuarto">
+                                        <h5>MÁXIMA SEGURIDAD DE TU INFORMACIÓN</h5>
+                                    </a>
+                                </li>
+                                <li class="tab " style="text-align: left; ">
+                                    <a href="#quinto ">
+                                        <h5>CREA Y COMPARTE CON QUIÉN TU QUIERAS</h5>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
 
         <div class="section full-height " style="background-color: #F0F2F5; ">
             <div class="container ">
@@ -135,9 +246,9 @@
                     <div class="col s12 m6 l6 xl6 ">
                         <img class="responsive-img feature right-in-out fade-in-out " src="images/pantalla.png ">
                     </div>
-                    <div class="col s12 m6 l6 xl6 feature left-in-out fade-in-out">
-                        <h2 style=" font-weight: 500; letter-spacing: -1.5px; margin-bottom: 20px; " class="left-align grey-text text-darken-5 feature  h2">Aprende</h2>
-                        <span class="left-align grey-text text-darken-5  flow-text" style="letter-spacing: 0.5px;">Busca y selecciona los cursos que más te interesen aprender, si perteneces a una institución educativa, accede a los cursos que te han asignado, si te gusta crear contenido y quieres compartir y comercializarlo tus futuros clientes
+                    <div class="col s12 m6 l6 xl6 feature left-in-out fade-in-out ">
+                        <h2 style=" font-weight: 500; letter-spacing: -1.5px; margin-bottom: 20px; " class="left-align grey-text text-darken-5 feature h2 ">Aprende</h2>
+                        <span class="left-align grey-text text-darken-5 flow-text " style="letter-spacing: 0.5px; ">Busca y selecciona los cursos que más te interesen aprender, si perteneces a una institución educativa, accede a los cursos que te han asignado, si te gusta crear contenido y quieres compartir y comercializarlo tus futuros clientes
                         aquí lo encontrarán. </span>
                     </div>
                 </div>
@@ -148,9 +259,9 @@
         <div class="section full-height white ">
             <div class="container ">
                 <div class="row ">
-                    <div class="col s12 m6 l6 xl6 feature right-in-out fade-in-out">
-                        <h2 style="letter-spacing: -1.5px; font-weight: 500; margin-bottom: 20px;  " class="left-align grey-text text-darken-5 h2">Crea</h1>
-                            <span class="left-align grey-text text-darken-5  flow-text" style="letter-spacing: 0.5px; ">Con XpertCAD podrás crear o documentar cursos y contenidos interactivos que te ayudarán a plasmar tu conocimiento y experiencias rápidamente. Podrás compartirlo con alumnos o participantes o incluso comercializarlo.</span>
+                    <div class="col s12 m6 l6 xl6 feature right-in-out fade-in-out ">
+                        <h2 style="letter-spacing: -1.5px; font-weight: 500; margin-bottom: 20px; " class="left-align grey-text text-darken-5 h2 ">Crea</h1>
+                            <span class="left-align grey-text text-darken-5 flow-text " style="letter-spacing: 0.5px; ">Con XpertCAD podrás crear o documentar cursos y contenidos interactivos que te ayudarán a plasmar tu conocimiento y experiencias rápidamente. Podrás compartirlo con alumnos o participantes o incluso comercializarlo.</span>
                     </div>
                     <div class="col s12 m6 l6 xl6 ">
                         <img class="responsive-img feature left-in-out fade-in-out " src="images/pantalla.png ">
@@ -167,24 +278,24 @@
                         <img class="responsive-img feature right-in-out fade-in-out " src="images/pantalla.png ">
                     </div>
                     <div class="col s12 m6 l6 xl6 feature left-in-out fade-in-out ">
-                        <h2 style="letter-spacing: -1.5px; font-weight: 500; margin-bottom: 20px;  " class="left-align grey-text text-darken-5 h2">Administra</h1>
-                            <span style="letter-spacing: 0.5px;" class="left-align grey-text text-darken-5 flow-text">Deseas conocer el avance de los participantes a tus cursos, su desempeño, o simplemente quieres administrar quién tiene acceso y quién no, con XpertCAD podrás conocer esta información y más.</span>
+                        <h2 style="letter-spacing: -1.5px; font-weight: 500; margin-bottom: 20px; " class="left-align grey-text text-darken-5 h2 ">Administra</h1>
+                            <span style="letter-spacing: 0.5px; " class="left-align grey-text text-darken-5 flow-text ">Deseas conocer el avance de los participantes a tus cursos, su desempeño, o simplemente quieres administrar quién tiene acceso y quién no, con XpertCAD podrás conocer esta información y más.</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section white" style="height: auto;">
+        <div class="section white " style="height: auto; ">
             <div class=" row valign ">
                 <div class="col s12 m10 offset-m1 ">
                     <div class="row ">
-                        <div class="col s12  feature right-in-out">
+                        <div class="col s12 feature right-in-out ">
                             <h2 style=" font-weight: 500; letter-spacing: -1.5px; margin-bottom: 20px; " class="left-align grey-text text-darken-5 h2 ">Conoce los beneficios de trabajar en XpertCAD</h2>
-                            <span style="letter-spacing: 0.15px;" class="left-align grey-text text-darken-5 flow-text">En una sola plataforma podrás comprender cómo evoluciona la formación y conocimientos de los que son parte de tu comunidad, de tu empresa, de tu institución. Administra el acceso al conocimiento como consideres sea adecuado.</span>
+                            <span style="letter-spacing: 0.15px; " class="left-align grey-text text-darken-5 flow-text ">En una sola plataforma podrás comprender cómo evoluciona la formación y conocimientos de los que son parte de tu comunidad, de tu empresa, de tu institución. Administra el acceso al conocimiento como consideres sea adecuado.</span>
                         </div>
                     </div>
                     <div class="row staggered-transition-wrapper " data-duration="0 " data-staggereddelay=".9 ">
                         <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-cloud-upload  green-text text-accent-4"></i></h4>
+                            <h4><i class="icon-cloud-upload green-text text-accent-4 "></i></h4>
                             <p class="caption ">Disponible 24/7 desde cualquier dispositivo: XpertCAD no requiere de instalación, gracias a que se aloja en la nube podrás navegar en cualquier lado, a cualquier hora, desde cualquier sistema y dispositivo.</p>
                         </div>
                         <div class="col s12 m12 l4 xl4 fade-in-out ">
@@ -192,18 +303,18 @@
                             <p class="caption ">Monitorea el desempeño de tus usuarios: Nuestra plataforma está diseñada para crear contenidos, administrarlo y compartirlo fácilmente.</p>
                         </div>
                         <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-lock pink-text  yellow-text text-darken-2"></i></h4>
+                            <h4><i class="icon-lock pink-text yellow-text text-darken-2 "></i></h4>
                             <p class="caption ">Siempre contarás con confidencialidad y seguridad, tú o tu institución tienen un espacio espacio específico (tenant) para almacenar exclusivamente toda la información que necesiten.</p>
                         </div>
-                        <div class="col s12">
+                        <div class="col s12 ">
 
                         </div>
                         <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-shield  blue-text text-lighten-1"></i></h4>
+                            <h4><i class="icon-shield blue-text text-lighten-1 "></i></h4>
                             <p class="caption ">Almacena tu información en la nube con los servidores más seguros y potentes del mercado, Amazon Web Services (AWS).</p>
                         </div>
                         <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-clock   blue-grey-text text-darken-2"></i></h4>
+                            <h4><i class="icon-clock blue-grey-text text-darken-2 "></i></h4>
                             <p class="caption ">No te preocupes por tu información, recuerda que todos los contenidos que generes cuentan con respaldo (backup) cada 24 hrs.</p>
                         </div>
 
@@ -273,8 +384,8 @@
             </div>
         </div>
         <div class="section full-height amber darken-3 ">
-            <div class="container center scale-in-out fade-in-out">
-                <h2 class="white-text  h2" style="font-weight: 500; ">Transforma tu vida mediante la educación</h2>
+            <div class="container center scale-in-out fade-in-out ">
+                <h2 class="white-text h2 " style="font-weight: 500; ">Transforma tu vida mediante la educación</h2>
                 <a class="waves-effect waves-light btn-large orange " style="font-weight: 500; ">Empezar ahora</a>
 
             </div>
@@ -296,439 +407,439 @@
                     <div class="feature left-in-out fade-in-out ">
                         <h3>This is a cool feature</h3>
                         <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                    <div class="feature left-in-out fade-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                    <div class="feature left-in-out fade-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section ">
-    <div class="row valign ">
-        <div class="col s12 m10 offset-m1 ">
-            <div class="row ">
-                <div class="col s12 ">
-                    <h2 class="section-title ">Features</h2>
-                </div>
-            </div>
-            <div class="row staggered-transition-wrapper " data-duration="0 " data-staggereddelay=".9 ">
-                <div class="col s12 m6 l4 fade-in-out ">
-                    <h4><i class="icon-light-bulb "></i></h4>
-                    <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
-                </div>
-                <div class="col s12 m6 l4 fade-in-out ">
-                    <h4><i class="icon-bolt "></i></h4>
-                    <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
-                </div>
-                <div class="col s12 m6 l4 fade-in-out ">
-                    <h4><i class="icon-rocket "></i></h4>
-                    <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
-                </div>
-                <div class="col s12 m6 l4 fade-in-out ">
-                    <h4><i class="icon-settings "></i></h4>
-                    <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
-                </div>
-                <div class="col s12 m6 l4 fade-in-out ">
-                    <h4><i class="icon-umbrella "></i></h4>
-                    <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
-                </div>
-                <div class="col s12 m6 l4 fade-in-out ">
-                    <h4><i class="icon-compass "></i></h4>
-                    <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="section light full-height ">
-    <div class="row ">
-        <div class="col s12 m10 offset-m1 center ">
-            <h1>blog</h1>
-            <div class="row masonry-grid ">
-                <div class="col s12 m6 l4 ">
-                    <div class="card fade-in-out up-in-out " data-duration="0 ">
-                        <div class="card-image ">
-                            <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
-                            <span class="card-title ">Something Interesting</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4 ">
-                    <div class="card fade-in-out up-in-out " data-duration="0 ">
-                        <div class="card-image ">
-                            <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
-                            <span class="card-title ">Another Blog Post</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4 ">
-                    <div class="card fade-in-out up-in-out " data-duration="0 ">
-                        <div class="card-image ">
-                            <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
-                            <span class="card-title ">Click Bait Article</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4 ">
-                    <div class="card fade-in-out up-in-out " data-duration="0 ">
-                        <div class="card-image ">
-                            <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
-                            <span class="card-title ">Don't Read This!</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4 ">
-                    <div class="card fade-in-out up-in-out " data-duration="0 ">
-                        <div class="card-image ">
-                            <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
-                            <span class="card-title ">Why Are You Still Reading?</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4 ">
-                    <div class="card fade-in-out up-in-out " data-duration="0 ">
-                        <div class="card-image ">
-                            <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
-                            <span class="card-title ">Good Bye</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section black valign-wrapper ">
-    <div class="row valign ">
-        <div class="col s12 m10 offset-m1 ">
-            <div class="row ">
-                <div class="col s12 m4 ">
-                    <div class="transform-wrapper ">
-                        <div class="pricing-table scale-in-out fade-in-out left-transform-origin ">
-                            <div class="pricing-header ">
-                                <i class="icon-paper-plane "></i>
-                                <h4>Basic</h4>
-                                <div class="price ">
-                                    <span class="currency ">$</span>
-                                    <span class="dollars ">9</span>
-                                    <span class="cents ">99</span>
+                                        axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                                <div class="feature left-in-out fade-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                                <div class="feature left-in-out fade-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
                                 </div>
                             </div>
-                            <ul class="pricing-features ">
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature disabled "><i class="icon-close "></i>Pro and above.</li>
-                                <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
-                                <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
-                                <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="section ">
+                <div class="row valign ">
+                    <div class="col s12 m10 offset-m1 ">
+                        <div class="row ">
+                            <div class="col s12 ">
+                                <h2 class="section-title ">Features</h2>
+                            </div>
+                        </div>
+                        <div class="row staggered-transition-wrapper " data-duration="0 " data-staggereddelay=".9 ">
+                            <div class="col s12 m6 l4 fade-in-out ">
+                                <h4><i class="icon-light-bulb "></i></h4>
+                                <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
+                            </div>
+                            <div class="col s12 m6 l4 fade-in-out ">
+                                <h4><i class="icon-bolt "></i></h4>
+                                <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
+                            </div>
+                            <div class="col s12 m6 l4 fade-in-out ">
+                                <h4><i class="icon-rocket "></i></h4>
+                                <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
+                            </div>
+                            <div class="col s12 m6 l4 fade-in-out ">
+                                <h4><i class="icon-settings "></i></h4>
+                                <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
+                            </div>
+                            <div class="col s12 m6 l4 fade-in-out ">
+                                <h4><i class="icon-umbrella "></i></h4>
+                                <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
+                            </div>
+                            <div class="col s12 m6 l4 fade-in-out ">
+                                <h4><i class="icon-compass "></i></h4>
+                                <p class="caption ">This is a cool feature about your product! It really separates you from the crowd.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <div class="col s12 m4 ">
-                    <div class="transform-wrapper ">
-                        <div class="pricing-table featured scale-in-out fade-in-out ">
-                            <div class="pricing-header ">
-                                <i class="icon-plane "></i>
-                                <h4>Pro</h4>
-                                <div class="price ">
-                                    <span class="currency ">$</span>
-                                    <span class="dollars ">59</span>
-                                    <span class="cents ">99</span>
+            <div class="section light full-height ">
+                <div class="row ">
+                    <div class="col s12 m10 offset-m1 center ">
+                        <h1>blog</h1>
+                        <div class="row masonry-grid ">
+                            <div class="col s12 m6 l4 ">
+                                <div class="card fade-in-out up-in-out " data-duration="0 ">
+                                    <div class="card-image ">
+                                        <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
+                                        <span class="card-title ">Something Interesting</span>
+                                    </div>
                                 </div>
                             </div>
-                            <ul class="pricing-features ">
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>Pro and above.</li>
-                                <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
-                                <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
-                                <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4 ">
-                    <div class="transform-wrapper ">
-                        <div class="pricing-table scale-in-out fade-in-out right-transform-origin ">
-                            <div class="pricing-header ">
-                                <i class="icon-rocket "></i>
-                                <h4>Enterprise</h4>
-                                <div class="price ">
-                                    <span class="currency ">$</span>
-                                    <span class="dollars ">299</span>
-                                    <span class="cents ">99</span>
+                            <div class="col s12 m6 l4 ">
+                                <div class="card fade-in-out up-in-out " data-duration="0 ">
+                                    <div class="card-image ">
+                                        <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
+                                        <span class="card-title ">Another Blog Post</span>
+                                    </div>
                                 </div>
                             </div>
-                            <ul class="pricing-features ">
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>Enterprise only.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>Enterprise only.</li>
-                                <li class="pricing-feature "><i class="icon-accept "></i>Enterprise only.</li>
-                            </ul>
+                            <div class="col s12 m6 l4 ">
+                                <div class="card fade-in-out up-in-out " data-duration="0 ">
+                                    <div class="card-image ">
+                                        <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
+                                        <span class="card-title ">Click Bait Article</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l4 ">
+                                <div class="card fade-in-out up-in-out " data-duration="0 ">
+                                    <div class="card-image ">
+                                        <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
+                                        <span class="card-title ">Don't Read This!</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l4 ">
+                                <div class="card fade-in-out up-in-out " data-duration="0 ">
+                                    <div class="card-image ">
+                                        <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
+                                        <span class="card-title ">Why Are You Still Reading?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l4 ">
+                                <div class="card fade-in-out up-in-out " data-duration="0 ">
+                                    <div class="card-image ">
+                                        <a href="blog.html "><img src="http://placehold.it/600x400 "></a>
+                                        <span class="card-title ">Good Bye</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
-</div>
+            <div class="section black valign-wrapper ">
+                <div class="row valign ">
+                    <div class="col s12 m10 offset-m1 ">
+                        <div class="row ">
+                            <div class="col s12 m4 ">
+                                <div class="transform-wrapper ">
+                                    <div class="pricing-table scale-in-out fade-in-out left-transform-origin ">
+                                        <div class="pricing-header ">
+                                            <i class="icon-paper-plane "></i>
+                                            <h4>Basic</h4>
+                                            <div class="price ">
+                                                <span class="currency ">$</span>
+                                                <span class="dollars ">9</span>
+                                                <span class="cents ">99</span>
+                                            </div>
+                                        </div>
+                                        <ul class="pricing-features ">
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature disabled "><i class="icon-close "></i>Pro and above.</li>
+                                            <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
+                                            <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
+                                            <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="col s12 m4 ">
+                                <div class="transform-wrapper ">
+                                    <div class="pricing-table featured scale-in-out fade-in-out ">
+                                        <div class="pricing-header ">
+                                            <i class="icon-plane "></i>
+                                            <h4>Pro</h4>
+                                            <div class="price ">
+                                                <span class="currency ">$</span>
+                                                <span class="dollars ">59</span>
+                                                <span class="cents ">99</span>
+                                            </div>
+                                        </div>
+                                        <ul class="pricing-features ">
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>Pro and above.</li>
+                                            <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
+                                            <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
+                                            <li class="pricing-feature disabled "><i class="icon-close "></i>Enterprise only.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
-<div class="section light full-height ">
-    <div class="container ">
-        <div class="row ">
-            <div class="col m3 ">
-                <div class="perspective-wrapper ">
-                    <div class="feature rotate-y-in-out fade-in-out left-transform-origin right-align ">
-                        <h3>Cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                </div>
-                <div class="perspective-wrapper ">
-                    <div class="feature rotate-y-in-out fade-in-out left-transform-origin right-align ">
-                        <h3>Cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m6 ">
-                <div class="phone-preview-halfway ">
-                    <div class="phone-preview-sizer ">
-                        <div class="phone-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col m3 ">
-                <div class="perspective-wrapper ">
-                    <div class="feature rotate-y-in-out fade-in-out right-transform-origin ">
-                        <h3>Cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                </div>
-                <div class="perspective-wrapper ">
-                    <div class="feature rotate-y-in-out fade-in-out right-transform-origin ">
-                        <h3>Cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                            <div class="col s12 m4 ">
+                                <div class="transform-wrapper ">
+                                    <div class="pricing-table scale-in-out fade-in-out right-transform-origin ">
+                                        <div class="pricing-header ">
+                                            <i class="icon-rocket "></i>
+                                            <h4>Enterprise</h4>
+                                            <div class="price ">
+                                                <span class="currency ">$</span>
+                                                <span class="dollars ">299</span>
+                                                <span class="cents ">99</span>
+                                            </div>
+                                        </div>
+                                        <ul class="pricing-features ">
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>10 product uses.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>Enterprise only.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>Enterprise only.</li>
+                                            <li class="pricing-feature "><i class="icon-accept "></i>Enterprise only.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
-
-<div class="section full-height ">
-    <div class="container ">
-        <div class="row valign-wrapper ">
-            <div class="col m3 ">
-                <div class="phone-preview-sizer right-in-out fade-in-out ">
-                    <div class="phone-preview "></div>
-                    <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
-                </div>
-            </div>
-            <div class="col m8 offset-m1 ">
-                <div class="staggered-transition-wrapper ">
-                    <div class="feature left-in-out fade-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                    <div class="feature left-in-out fade-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                    <div class="feature left-in-out fade-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="section light full-height ">
-    <div class="container ">
-        <div class="row valign-wrapper ">
-            <div class="col s12 m4 ">
-                <div class="staggered-transition-wrapper ">
-                    <div class="feature fade-right-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                    <div class="feature fade-right-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m8 ">
-                <div class="device-pair ">
-                    <div class="tablet-preview-sizer ">
-                        <div class="tablet-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
-                    </div>
-                    <div class="tablet-preview-sizer left-in-out ">
-                        <div class="tablet-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+
+
+            <div class="section light full-height ">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col m3 ">
+                            <div class="perspective-wrapper ">
+                                <div class="feature rotate-y-in-out fade-in-out left-transform-origin right-align ">
+                                    <h3>Cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                            </div>
+                            <div class="perspective-wrapper ">
+                                <div class="feature rotate-y-in-out fade-in-out left-transform-origin right-align ">
+                                    <h3>Cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m6 ">
+                            <div class="phone-preview-halfway ">
+                                <div class="phone-preview-sizer ">
+                                    <div class="phone-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m3 ">
+                            <div class="perspective-wrapper ">
+                                <div class="feature rotate-y-in-out fade-in-out right-transform-origin ">
+                                    <h3>Cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                            </div>
+                            <div class="perspective-wrapper ">
+                                <div class="feature rotate-y-in-out fade-in-out right-transform-origin ">
+                                    <h3>Cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
 
-<div class="section black full-height ">
-    <div class="container ">
-        <div class="row valign-wrapper ">
-            <div class="col s12 m8 ">
-                <div class="device-pair right-side ">
-                    <div class="tablet-preview-sizer white ">
-                        <div class="tablet-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
-                    </div>
-                    <div class="tablet-preview-sizer white right-in-out ">
-                        <div class="tablet-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+            <div class="section full-height ">
+                <div class="container ">
+                    <div class="row valign-wrapper ">
+                        <div class="col m3 ">
+                            <div class="phone-preview-sizer right-in-out fade-in-out ">
+                                <div class="phone-preview "></div>
+                                <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
+                            </div>
+                        </div>
+                        <div class="col m8 offset-m1 ">
+                            <div class="staggered-transition-wrapper ">
+                                <div class="feature left-in-out fade-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                                <div class="feature left-in-out fade-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                                <div class="feature left-in-out fade-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 ">
-                <div class="staggered-transition-wrapper ">
-                    <div class="feature fade-left-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
-                    </div>
-                    <div class="feature fade-left-in-out ">
-                        <h3>This is a cool feature</h3>
-                        <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                            axe officia selvage occaecat locavore accusamus. </p>
+
+
+            <div class="section light full-height ">
+                <div class="container ">
+                    <div class="row valign-wrapper ">
+                        <div class="col s12 m4 ">
+                            <div class="staggered-transition-wrapper ">
+                                <div class="feature fade-right-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                                <div class="feature fade-right-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m8 ">
+                            <div class="device-pair ">
+                                <div class="tablet-preview-sizer ">
+                                    <div class="tablet-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+                                </div>
+                                <div class="tablet-preview-sizer left-in-out ">
+                                    <div class="tablet-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
 
-<div class="section light full-height ">
-    <div class="container ">
-        <div class="row ">
-            <div class="col s12 m8 offset-m2 ">
-                <div class="feature ">
-                    <h3>This is a cool feature</h3>
-                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                        axe officia selvage occaecat locavore accusamus. </p>
-                </div>
-                <div class="device-triplet ">
-                    <div class="tablet-preview-sizer ">
-                        <div class="tablet-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
-                    </div>
-                    <div class="tablet-preview-sizer left-in-out ">
-                        <div class="tablet-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
-                    </div>
-                    <div class="tablet-preview-sizer right-in-out ">
-                        <div class="tablet-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+            <div class="section black full-height ">
+                <div class="container ">
+                    <div class="row valign-wrapper ">
+                        <div class="col s12 m8 ">
+                            <div class="device-pair right-side ">
+                                <div class="tablet-preview-sizer white ">
+                                    <div class="tablet-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+                                </div>
+                                <div class="tablet-preview-sizer white right-in-out ">
+                                    <div class="tablet-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 ">
+                            <div class="staggered-transition-wrapper ">
+                                <div class="feature fade-left-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                                <div class="feature fade-left-in-out ">
+                                    <h3>This is a cool feature</h3>
+                                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust
+                                        fund fashion axe officia selvage occaecat locavore accusamus. </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
 
-<div class="section black full-height ">
-    <div class="container ">
-        <div class="row ">
-            <div class="col s12 m8 offset-m2 ">
-                <div class="feature ">
-                    <h3>This is a cool feature</h3>
-                    <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund fashion
-                        axe officia selvage occaecat locavore accusamus. </p>
-                </div>
-                <div class="device-triplet ">
-                    <div class="phone-preview-sizer iphone ">
-                        <div class="phone-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
-                    </div>
-                    <div class="phone-preview-sizer iphone left-in-out ">
-                        <div class="phone-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
-                    </div>
-                    <div class="phone-preview-sizer iphone right-in-out ">
-                        <div class="phone-preview "></div>
-                        <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
+            <div class="section light full-height ">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col s12 m8 offset-m2 ">
+                            <div class="feature ">
+                                <h3>This is a cool feature</h3>
+                                <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund
+                                    fashion axe officia selvage occaecat locavore accusamus. </p>
+                            </div>
+                            <div class="device-triplet ">
+                                <div class="tablet-preview-sizer ">
+                                    <div class="tablet-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+                                </div>
+                                <div class="tablet-preview-sizer left-in-out ">
+                                    <div class="tablet-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+                                </div>
+                                <div class="tablet-preview-sizer right-in-out ">
+                                    <div class="tablet-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/600x400) "></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
-<div class="section light valign-wrapper ">
-    <div class="container ">
-        <form>
-            <div class="row ">
-                <div class="col s12 ">
-                    <h2 class="section-title ">Contact Us</h2>
-                </div>
-                <div class="input-field col s6 ">
-                    <input id="first_name " type="text ">
-                    <label for="first_name ">First Name</label>
-                </div>
-                <div class="input-field col s6 ">
-                    <input id="last_name " type="text ">
-                    <label for="last_name ">Last Name</label>
-                </div>
-                <div class="input-field col s12 ">
-                    <textarea id="message " class="materialize-textarea "></textarea>
-                    <label for="message ">Message</label>
-                    <a class="waves-effect waves-light btn-large ">Button</a>
+
+            <div class="section black full-height ">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col s12 m8 offset-m2 ">
+                            <div class="feature ">
+                                <h3>This is a cool feature</h3>
+                                <p>Locavore drinking vinegar quinoa seitan church-key, tilde aliqua. Hoodie mustache aliquip, selfies bitters poutine adipisicing scenester man braid jean shorts. Aliqua mlkshk 90's distillery, truffaut sapiente trust fund
+                                    fashion axe officia selvage occaecat locavore accusamus. </p>
+                            </div>
+                            <div class="device-triplet ">
+                                <div class="phone-preview-sizer iphone ">
+                                    <div class="phone-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
+                                </div>
+                                <div class="phone-preview-sizer iphone left-in-out ">
+                                    <div class="phone-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
+                                </div>
+                                <div class="phone-preview-sizer iphone right-in-out ">
+                                    <div class="phone-preview "></div>
+                                    <div class="image-container default " style="background-image:url(http://placehold.it/530x990) "></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
-</div>
--->
+
+            <div class="section light valign-wrapper ">
+                <div class="container ">
+                    <form>
+                        <div class="row ">
+                            <div class="col s12 ">
+                                <h2 class="section-title ">Contact Us</h2>
+                            </div>
+                            <div class="input-field col s6 ">
+                                <input id="first_name " type="text ">
+                                <label for="first_name ">First Name</label>
+                            </div>
+                            <div class="input-field col s6 ">
+                                <input id="last_name " type="text ">
+                                <label for="last_name ">Last Name</label>
+                            </div>
+                            <div class="input-field col s12 ">
+                                <textarea id="message " class="materialize-textarea "></textarea>
+                                <label for="message ">Message</label>
+                                <a class="waves-effect waves-light btn-large ">Button</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            -->
         <footer class="page-footer ">
             <div class="container ">
                 <div class="row ">
                     <div class="col s6 m3 ">
-                        <img class="materialize-logo responsive-img" src="images/Xpertcad.png " width="200px " alt=" XpertCAD ">
+                        <img class="materialize-logo responsive-img " src="images/Xpertcad.png " width="200px " alt=" XpertCAD ">
                         <p>Desarrollado por el equipo XpertCAD.</p>
                     </div>
                     <div class="col s6 m3 ">
@@ -783,5 +894,11 @@
         <script src="js/init.js "></script>
 </body>
 </div>
+
+</html>
+
+</html>
+
+</html>
 
 </html>

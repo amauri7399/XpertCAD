@@ -5231,7 +5231,7 @@
         }
         
         .tabs .tab a {
-            color: rgba(29, 233, 195, 0.7);
+            color: rgba(212, 212, 212, 0.7);
             display: block;
             width: 100%;
             height: 100%;
@@ -5245,7 +5245,7 @@
         .tabs .tab a:hover,
         .tabs .tab a.active {
             background-color: transparent;
-            color: #1de9c3;
+            color: #ffffff;
         }
         
         .tabs .tab.disabled a,
@@ -5258,7 +5258,7 @@
             position: absolute;
             bottom: 0;
             height: 2px;
-            background-color: #63f0d6;
+            background-color: #ebecec;
             will-change: left, right;
         }
         
@@ -11973,11 +11973,6 @@
             width: 100%;
         }
         
-        nav.navbar.dark a,
-        nav.navbar.solid a {
-            color: #444;
-        }
-        
         nav.navbar.dark .brand-logo i,
         nav.navbar.solid .brand-logo i {
             color: #444;
@@ -11992,23 +11987,9 @@
             background-color: #444;
         }
         
-        nav.navbar.solid {
-            background-color: #fff;
-        }
-        
         nav.navbar.solid.dark,
         nav.navbar.solid {
             background-color: #FAFAFA;
-        }
-        
-        nav.navbar.solid.dark :not(.dropdown-content)>li>a,
-        nav.navbar.solid :not(.dropdown-content)>li>a {
-            color: #3D4246;
-        }
-        
-        nav.navbar.solid.dark .brand-logo i,
-        nav.navbar.solid .brand-logo i {
-            color: #fff;
         }
         
         nav.navbar.solid.dark a::before,
@@ -12852,11 +12833,11 @@
             top: 0;
             right: 0;
             background-color: rgb(15, 15, 15);
-            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            box-shadow: inset 2px 0px 10px rgba(0, 0, 0, 0.404);
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
-            z-index: 6;
+            z-index: 7;
         }
         
         .SideNavRight a {
@@ -12869,7 +12850,7 @@
         }
         
         .SideNavBott {
-            top: 45%;
+            top: 50%;
             right: -52px;
             z-index: 3;
             transition: .5s;
@@ -12881,6 +12862,7 @@
             z-index: 4;
             transition: .5s;
             border: 2px solid #ff8f00;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.404);
         }
         
         #contentmain {
