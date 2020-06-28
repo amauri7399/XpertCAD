@@ -11785,7 +11785,7 @@
             background-attachment: fixed;
             background-size: cover;
             background-blend-mode: overlay;
-            background-image: url("../images/Aprende/Quien puede aprender.jpg"), linear-gradient(90deg, #000000 15%, #ebeeee26 74%);
+            background-image: url("../images/Aprende/Quien puede aprender.jpg"), linear-gradient(90deg, #000000 5%, #ebeeee26 74%);
         }
         
         .background.portrait img {
