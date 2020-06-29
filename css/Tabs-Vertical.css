@@ -14,10 +14,16 @@
 }
 
 .tabs-vertical .tab .active {
-    -moz-transition: border-color .5s ease;
-    -o-transition: border-color .5s ease;
-    -webkit-transition: border-color .5s ease;
-    transition: border-color .5s ease;
+    border-bottom-width: 1px solid #ff8f00;
+    width: 670px;
+    height: 30px;
+}
+
+.tabs-vertical .tab h5.active {
+    border-bottom: 1px solid #ff8f00;
+    width: 70px;
+    height: 30px;
+    font-weight: 500;
 }
 
 .tabs-vertical .tab h5 {
@@ -29,7 +35,7 @@
 
 .tabs-vertical .tab h5:hover {
     color: rgb(255, 255, 255);
-    font-weight: 400;
+    font-weight: 500;
     border-bottom: 1px solid #ff8f00;
     width: 70px;
     height: 30px;
