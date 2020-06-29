@@ -5008,6 +5008,19 @@
             padding: 24px;
         }
         
+        .card .card-image .card-title2 {
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            padding: 24px;
+            text-align: center;
+            margin: auto;
+        }
+        
         .zoom-effect-container:hover .card-image img {
             -webkit-transform: scale(1.08);
             transform: scale(1.08);
@@ -11778,14 +11791,9 @@
             display: block;
             position: absolute;
             top: 0;
-            width: 100%;
+            width: auto;
             height: 100%;
             z-index: -1;
-            background-position: center center;
-            background-attachment: fixed;
-            background-size: cover;
-            background-blend-mode: overlay;
-            background-image: url("../images/Aprende/Quien puede aprender.jpg"), linear-gradient(90deg, #000000 5%, #ebeeee26 74%);
         }
         
         .background1 {
@@ -11799,7 +11807,21 @@
             background-attachment: fixed;
             background-size: cover;
             background-blend-mode: overlay;
-            background-image: url("../images/vr.jpg");
+            background-image: url("../images/Aprende/Quien puede aprender.jpg"), linear-gradient(90deg, #000000 5%, #ebeeee26 74%);
+        }
+        
+        .background2 {
+            display: block;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-image: url("../images/Aprende/vr.png");
         }
         
         .background.portrait img {
@@ -12902,4 +12924,95 @@
             z-index: 5000;
             margin: auto;
             cursor: pointer;
+        }
+        
+        .flip-card2 {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card2:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .flip-card-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            color: #fff;
+            top: 50%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            padding: auto;
+        }
+        
+        .flip-card-back {
+            background-color: transparent;
+            color: 212121;
+            transform: rotateY(180deg);
+        }
+        
+        .pulse {
+            margin: auto;
+            display: block;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #f5983b;
+            cursor: pointer;
+            box-shadow: 0 0 0 rgba(204, 135, 44, 0.835);
+            animation: pulse 2s infinite;
+        }
+        
+        .pulse:hover {
+            animation: none;
+        }
+        
+        @-webkit-keyframes pulse {
+            0% {
+                -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+            }
+            70% {
+                -webkit-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+            }
+            100% {
+                -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+                box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+            }
+            70% {
+                -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0.411);
+                box-shadow: 0 0 0 20px rgba(204, 169, 44, 0.349);
+            }
+            100% {
+                -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+                box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+            }
         }
