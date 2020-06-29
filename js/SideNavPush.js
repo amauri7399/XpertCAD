@@ -13,3 +13,11 @@ $(document).ready(function() {
 
     });
 });
+
+$(window).on('scroll', function() {
+    var $window = $(this);
+
+    $window.scrollTop() > 0 ?
+        $('.animated-bounce').fadeOut(300) :
+        $('.animated-bounce').fadeIn(300);
+});
