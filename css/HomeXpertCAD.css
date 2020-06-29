@@ -13170,7 +13170,7 @@
             animation-name: rotate-last;
             animation-duration: 1.5s;
             animation-delay: 3s;
-            animation-fill-mode: forwards;
+            animation: rotate 1.5s infinite;
         }
         
         @keyframes rotate {
