@@ -11861,7 +11861,7 @@
             background-attachment: fixed;
             background-size: cover;
             background-blend-mode: overlay;
-            background-image: url("../images/Crea/conocimiento.jpg"), linear-gradient(0deg, #0000009b 1%, #ebeeee26 200%);
+            background-image: url("../images/Crea/conocimiento.jpg"), linear-gradient(0deg, #000000b2 6%, #4b4b4b54 200%);
         }
         
         .background6 {
@@ -13199,4 +13199,29 @@
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
             }
+        }
+        /* nuevo zooom carousel*/
+        
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(1, 1);
+            }
+            to {
+                -webkit-transform: scale(1.3, 1.3);
+            }
+        }
+        
+        @keyframes zoom {
+            from {
+                transform: scale(1, 1);
+            }
+            to {
+                transform: scale(1.5, 1.5);
+            }
+        }
+        
+        .zoompick .item>img {
+            -webkit-animation: zoom 30s;
+            animation: zoom 30s;
+            background-image: radial-gradient( white, black);
         }
