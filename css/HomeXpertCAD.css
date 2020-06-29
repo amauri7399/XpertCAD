@@ -12969,13 +12969,13 @@
         hr.left1azul {
             border: 1px solid #ff8f00;
             width: 120px;
-            float: center;
+            float: left;
         }
         
         hr.left1azul1 {
             border: 1px solid #ff8f00;
             width: 120px;
-            float: left;
+            float: center;
         }
         
         hr.left1azul2 {
