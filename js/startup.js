@@ -912,3 +912,34 @@ $('.tabs-vertical').on('click', 'li', function() {
 $(window).resize(function() {
     $('.active').css({ 'height': $('.active').find('div').outerHeight() });
 });
+
+// Greensock
+var tl = new TimelineMax();
+
+tl.add(
+    TweenMax.to('.video-container1', 1, { scale: 0.5, transformOrigin: "50%, 50%", ease: Power2.easeInOut })
+)
+
+tl.add(
+    TweenMax.to(".svg-container1", 1, { scale: 10, transformOrigin: "50%, 50%", ease: Power2.easeInOut }),
+    "-=1"
+)
+
+// ScrollMagic
+var controller = new ScrollMagic.Controller();
+
+// container pin
+var startpin = new ScrollMagic.Scene({
+        duration: 800
+    })
+    .setPin(".container1")
+    .addTo(controller);
+
+// tween
+new ScrollMagic.Scene({
+        duration: 500
+    })
+    .setTween(tl)
+    .addTo(controller);
+
+$('video1').get(0).play();
