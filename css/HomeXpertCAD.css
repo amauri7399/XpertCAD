@@ -8213,12 +8213,12 @@
             display: inline-block;
             position: relative;
             cursor: pointer;
-            height: 16px;
-            width: 16px;
+            height: 3px;
+            width: 56px;
             margin: 0 12px;
             background-color: #e0e0e0;
             transition: background-color .3s;
-            border-radius: 50%;
+            ;
         }
         
         .slider .indicators .indicator-item.active {
@@ -11933,10 +11933,6 @@
             color: inherit;
         }
         
-        .feature {
-            margin-bottom: 50px;
-        }
-        
         span.date {
             text-transform: uppercase;
             font-weight: 300;
@@ -12957,8 +12953,6 @@
             transform: rotate(-90deg);
             z-index: 4;
             transition: .5s;
-            border: 2px solid #ff8f00;
-            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.404);
         }
         
         #contentmain {
@@ -13144,60 +13138,146 @@
         }
         /*cambiar letra*/
         
-        .rotatingText-adjective {
-            font-size: 50px;
-            font-weight: 700;
-            opacity: 0;
+        .rw-words-1 h2 {
             position: absolute;
-            right: 400px;
-            text-align: left;
-            text-transform: uppercase;
+            opacity: 0;
+            overflow: hidden;
+            color: #6b969d;
+            -webkit-animation: rotateWord 18s linear infinite 0s;
+            -ms-animation: rotateWord 18s linear infinite 0s;
+            animation: rotateWord 18s linear infinite 0s;
+            float: right;
+            margin-right: 50px;
+            right: 250px;
         }
         
-        .rotatingText-adjective:nth-of-type(1) {
-            animation-name: rotate;
-            animation-duration: 1.5s;
-            animation-delay: 0.5s;
-        }
-        
-        .rotatingText-adjective:nth-of-type(2) {
-            animation-name: rotate;
-            animation-duration: 1.5s;
-            animation-delay: 1.75s;
-        }
-        
-        .rotatingText-adjective:nth-of-type(3) {
-            animation-name: rotate-last;
-            animation-duration: 1.5s;
+        .rw-words-1 h2:nth-child(2) {
+            -webkit-animation-delay: 3s;
+            -ms-animation-delay: 3s;
             animation-delay: 3s;
-            animation: rotate 1.5s infinite;
         }
         
-        @keyframes rotate {
+        .rw-words-1 h2:nth-child(3) {
+            -webkit-animation-delay: 6s;
+            -ms-animation-delay: 6s;
+            animation-delay: 6s;
+        }
+        
+        .rw-words-1 h2:nth-child(4) {
+            -webkit-animation-delay: 9s;
+            -ms-animation-delay: 9s;
+            animation-delay: 9s;
+        }
+        
+        .rw-words-1 h2:nth-child(5) {
+            -webkit-animation-delay: 12s;
+            -ms-animation-delay: 12s;
+            animation-delay: 12s;
+        }
+        
+        .rw-words-1 h2:nth-child(6) {
+            -webkit-animation-delay: 15s;
+            -ms-animation-delay: 15s;
+            animation-delay: 15s;
+        }
+        
+        @-webkit-keyframes rotateWord {
             0% {
                 opacity: 0;
-                transform: translate3d(0, 50px, 0);
             }
-            20%,
+            2% {
+                opacity: 0;
+                -webkit-transform: translateY(-30px);
+            }
+            5% {
+                opacity: 1;
+                -webkit-transform: translateY(0px);
+            }
+            17% {
+                opacity: 1;
+                -webkit-transform: translateY(0px);
+            }
+            20% {
+                opacity: 0;
+                -webkit-transform: translateY(30px);
+            }
             80% {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
+                opacity: 0;
             }
             100% {
                 opacity: 0;
-                transform: translate3d(0, -25px, 0);
             }
         }
         
-        @keyframes rotate-last {
+        @-ms-keyframes rotateWord {
             0% {
                 opacity: 0;
-                transform: translate3d(0, 50px, 0);
             }
-            50%,
-            100% {
+            2% {
+                opacity: 0;
+                -ms-transform: translateY(-30px);
+            }
+            5% {
                 opacity: 1;
-                transform: translate3d(0, 0, 0);
+                -ms-transform: translateY(0px);
+            }
+            17% {
+                opacity: 1;
+                -ms-transform: translateY(0px);
+            }
+            20% {
+                opacity: 0;
+                -ms-transform: translateY(30px);
+            }
+            80% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes rotateWord {
+            0% {
+                opacity: 0;
+            }
+            2% {
+                opacity: 0;
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+            5% {
+                opacity: 1;
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+            }
+            17% {
+                opacity: 1;
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+            }
+            20% {
+                opacity: 0;
+                -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+            }
+            80% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .rw-sentence {
+                font-size: 18px;
+            }
+        }
+        
+        @media screen and (max-width: 320px) {
+            .rw-sentence {
+                font-size: 9px;
             }
         }
         /* nuevo zooom carousel*/

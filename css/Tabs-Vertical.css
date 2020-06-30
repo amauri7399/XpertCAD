@@ -14,13 +14,16 @@
 }
 
 .tabs-vertical .tab h5 {
-    transition: cubic-bezier(0.23, 1, 0.320, 1);
     color: rgb(209, 209, 209);
     margin: 1px;
     font-weight: 300;
 }
 
-.tabs-vertical .tab h5:hover {
+.tabs-vertical .indicator {
+    display: none;
+}
+
+.tabs-vertical ul li>div p {
     color: rgb(255, 255, 255);
     font-weight: 400;
     border-bottom: 1px solid #ff8f00;
@@ -28,15 +31,36 @@
     height: 30px;
 }
 
-.tabs-vertical .tab h5.ex1:active {
-    color: red;
+.tabs-vertical ul li:after {
+    background: #000;
+    opacity: .1;
+}
+
+.tabs-vertical ul li:hover {
+    color: #fff;
+    font-weight: 500;
+}
+
+.tabs-vertical ul li:hover h1 {
+    color: #fff;
+    font-weight: 500;
+}
+
+.tabs-vertical ul li.active h5 {
     border-bottom: 1px solid #ff8f00;
+    font-weight: 500;
+    height: 40px;
+    transition: background 0.25s, color 0.25s, height 0.5s 0.25s cubic-bezier(0.75, 0, 0.25, 1);
 }
 
-.tabs-vertical .indicator {
-    display: none;
+.tabs-vertical ul li.active h5 {
+    color: #fff;
+    font-weight: 500;
+    width: 100px;
 }
 
-.tabs-vertical>.tab-content .active {
-    display: block;
+.tabs-vertical ul li.active>div {
+    left: 0;
+    background: #d40050;
+    transition: left 0.5s cubic-bezier(0.75, 0, 0.25, 1);
 }

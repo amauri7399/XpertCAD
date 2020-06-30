@@ -904,6 +904,11 @@ $(document).ready(function() {
     $('.materialboxed').materialbox();
 });
 
-$(document).ready(function() {
-    $('ul.tabs').tabs();
+$('.tabs-vertical').on('click', 'li', function() {
+    $('.tabs-vertical li').removeClass('active').css({ 'height': '50px' });
+    $(this).addClass('active').css({ 'height': $(this).find('div').outerHeight() });
+});
+
+$(window).resize(function() {
+    $('.active').css({ 'height': $('.active').find('div').outerHeight() });
 });

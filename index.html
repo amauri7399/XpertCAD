@@ -20,13 +20,15 @@
 
 
 <body>
-    <a class="waves-effect waves-light btn amber darken-3 SideNavBott btnfixed " id="SideNavBott" style=" font-weight: 400;  
+    <a class="waves-effect waves-light btn amber darken-3 SideNavBott btnfixed " id="SideNavBott" style=" font-weight: 400;
     "><i class="material-icons right  ">exposure_plus_1
 </i>Noticias
      </a>
 
     <div id="SideNavRight" class="SideNavRight grey lighten-3 ">
-        <a href="javascript:void(0)" class=" SideNavBott grey-text text-darken-1 right" id="SideNavBott">&times;</a>
+        <a href="javascript:void(0)" class=" SideNavBott grey-text text-darken-1 right" id="SideNavBott" style="transform: translateX(-20px);"><span class="material-icons">
+            close
+            </span></a>
         <div style="margin: 10px;">
             <img class="responsive-img hide-on-small-only materialboxed" src="images/Home/Info usuario XpertCAD E-learning_Mesa de trabajo 1.png">
 
@@ -229,8 +231,8 @@
                             <div class="col s12 " style="margin: auto; ">
                                 <ul class="tabs blue grey darken-4 ">
                                     <li class="tab " style="text-align: left; ">
-                                        <a class="active " href="#primero ">
-                                            <h5 style="font-size: 20px; ">TODO EN UNA SOLA PLATAFORMA</h5>
+                                        <a href="#primero ">
+                                            <h5 style="font-size: 20px; " class="active ">TODO EN UNA SOLA PLATAFORMA</h5>
                                         </a>
                                     </li>
                                     <li class="tab " style="text-align: left; ">
@@ -263,9 +265,9 @@
             </div>
             <div class="section white hide-on-large-only ">
                 <div class="row ">
-                    <div class="col s12 m7 l8 xl8 feature right-in-out fade-in-out " style="background-color: rgb(255, 255, 255); height: 100v; ">
-                        <div class="container ">
-                            <div class="tabs-vertical ">
+                    <div class="col s12 m7 l8 xl8 right-in-out fade-in-out " style="background-color: rgb(255, 255, 255); height: 100v; margin-bottom: 10px;">
+                        <div class="container">
+                            <div class="tabs-vertical">
                                 <div class="col s12 ">
                                     <div id="primero1 " class="tab-content active ">
                                         <h4 class="center-align flow-text " style="font-weight: 400; ">Disponible 24/7 en cualquier lugar, a cualquier hora, desde cualquier sistema y dispositivo
@@ -301,39 +303,84 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" col s12 m4 l4 xl4 " style="background-color: #212121 ; ">
-
-                        <div class="tabs-vertical " style=" margin-top: 50px; ">
-                            <div class="col s12 " style="margin: auto; ">
-                                <ul class="tabs blue grey darken-4 ">
-                                    <li class="tab ">
-                                        <a href="#primero1 " class=" ex1 ">
-                                        TODO EN UNA SOLA PLATAFORMA
-                                    </a>
-                                    </li>
-                                    <li class="tab ">
-                                        <a href="#segundo1 ">
-                                        DISPONIBLE 24/7 Y SIN INSTALACIÓN
-                                    </a>
-                                    </li>
-                                    <li class="tab ">
-                                        <a href="#tercero1 ">
-                                        MONITOREO DESDE UN SOLO PANEL
-                                    </a>
-                                    </li>
-                                    <li class="tab ">
-                                        <a href="#cuarto1 ">
-                                        MÁXIMA SEGURIDAD DE TU INFORMACIÓN
-                                    </a>
-                                    </li>
-                                    <li class="tab ">
-                                        <a href="#quinto1 ">
-                                        CREA Y COMPARTE CON QUIÉN TU QUIERAS
-                                    </a>
-                                    </li>
-                                </ul>
+                    <div class="section  white hide-on-small-only	" style="padding-top: 0px; padding-bottom: 0px;">
+                        <div class="row">
+                            <div class="col s12 m7 l8 xl8 feature right-in-out fade-in-out  active" style="background-color: rgb(255, 255, 255);" data-id="1">
+                                <div class="container">
+                                    <div class="tabs-vertical" style="margin-top: 100px;">
+                                        <div class="col s12">
+                                            <div id="primero" class="tab-content active" style="margin: 100px; ">
+                                                <img class="responsive-img " src="images/Home/Collage.png" style=" box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22); 
+                                            ">
+                                                <h4 class="center-align" style="font-weight: 400;">Disponible 24/7 en cualquier lugar, a cualquier hora, desde cualquier sistema y dispositivo
+                                                </h4>
+                                            </div>
+                                            <div id="segundo" class="tab-content" style="margin: 100px; display: none;">
+                                                <img class="responsive-img " src="images/Home/Devices.png" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22); 
+                                            ">
+                                                <h4 class="center-align" style="font-weight: 400;">Disponible 24/7 en cualquier lugar, a cualquier hora, desde cualquier sistema y dispositivo
+                                                </h4>
+                                            </div>
+                                            <div id="tercero" class="tab-content" style="margin: 100px; display: none;">
+                                                <img class="responsive-img " src="images/Crea/Administra.jpg" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22);
+                                            ">
+                                                <h4 class="center-align" style="font-weight: 400;">Disponible 24/7 en cualquier lugar, a cualquier hora, desde cualquier sistema y dispositivo
+                                                </h4>
+                                            </div>
+                                            <div id="cuarto" class="tab-content" style="margin: 100px; display: none;">
+                                                <img class="responsive-img " src="images/Home/aws.gif" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22);
+                                            ">
+                                                <h4 class="center-align" style="font-weight: 400;">Disponible 24/7 en cualquier lugar, a cualquier hora, desde cualquier sistema y dispositivo
+                                                </h4>
+                                            </div>
+                                            <div id="quinto" class="tab-content" style="margin: 100px; display: none;">
+                                                <img class="responsive-img " src="images/Crea/Desarrolla.jpg" style="box-shadow: 0 14px 18px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22);
+                                            ">
+                                                <h4 class="center-align" style="font-weight: 400;">Disponible 24/7 en cualquier lugar, a cualquier hora, desde cualquier sistema y dispositivo
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <div class=" col s12 m4 l4 xl4 " style="background-color: #212121 ; height: 100vh;">
+
+                                <div class=" tabs-vertical " style="margin-top: 210px; margin-bottom: 100px; ">
+                                    <div class="col s12 " style="margin: auto; ">
+                                        <ul class="tabs blue grey darken-4 ">
+                                            <li class="tabz " style="text-align: left; ">
+                                                <a class="active" href="#primero ">
+                                                    <h5 style="font-size: 20px; ">TODO EN UNA SOLA PLATAFORMA</h5>
+                                                </a>
+                                            </li>
+                                            <li class="tab " style="text-align: left; ">
+                                                <a href="#segundo ">
+                                                    <h5 style="font-size: 20px; ">DISPONIBLE 24/7 Y SIN INSTALACIÓN</h5>
+                                                </a>
+                                            </li>
+                                            <li class="tab " style="text-align: left; ">
+                                                <a href="#tercero ">
+                                                    <h5 style="font-size: 20px; ">MONITOREO DESDE UN SOLO PANEL</h5>
+                                                </a>
+                                            </li>
+                                            <li class="tab " style="text-align: left; ">
+                                                <a href="#cuarto ">
+                                                    <h5 style="font-size: 20px; ">MÁXIMA SEGURIDAD DE TU INFORMACIÓN</h5>
+                                                </a>
+                                            </li>
+                                            <li class="tab " style="text-align: left; ">
+                                                <a href="#quinto ">
+                                                    <h5 style="font-size: 20px; ">CREA Y COMPARTE CON QUIÉN TU QUIERAS</h5>
+                                                </a>
+                                            </li>
+                                            <div class="indicator" style="right: -10px; left: 11px;"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
 
                 </div>
@@ -342,7 +389,7 @@
 
 
 
-            <div class=" section light full-height " style="background-color: #F0F2F5; " style="height: 100vh; ">
+            <div class=" section light full-height " style="background-color: #F0F2F5; " style="height: 100vh; padding-top: 0px;">
                 <div class="row ">
                     <div class="col s12 m10 offset-m1 center ">
                         <h2 class="left-align grey-text text-darken-5 h2 " style="font-weight: 500; "></h2>
@@ -402,14 +449,34 @@
             <div class="section header white ">
                 <div class="background7 ">
                 </div>
-                <div class="header-wrapper row valign-wrapper " style="height: 100vh; ">
-                    <div class="col s12 ">
-                        <h3 class="center-align grey-text text-darken-5 h3 " style="font-weight: 200; ">Alcanza todo lo que te propongas..
+                <div class="header-wrapper row valign-wrapper " style="height: 80vh; ">
 
-                        </h3>
-                        <h2 class="rotatingText-adjective orange-text left-align ">Aprende</h2>
-                        <h2 class="rotatingText-adjective orange-text left-align ">Crea</h2>
-                        <h2 class="rotatingText-adjective orange-text left-align ">Administra</h2>
+
+                    <div class="col s12 ">
+                        <div class="row">
+                            <div class="col s12 m4 l2 ">
+
+                            </div>
+                            <div class="col s12 m4 l8">
+                                <h3 class="center-align grey-text text-darken-5 h3 " style="font-weight: 200; ">Alcanza todo lo que te propongas...
+                                </h3>
+                                <div class="rw-words rw-words-1 ">
+                                    <h2 class="orange-text right-align" style="font-weight: 500;">Aprende</h2>
+                                    <h2 class="orange-text right-align" style="font-weight: 500;">Crea</h2>
+                                    <h2 class="orange-text right-align" style="font-weight: 500;">Administra</h2>
+                                    <h2 class="orange-text right-align" style="font-weight: 500;">Aprende</h2>
+                                    <h2 class="orange-text right-align" style="font-weight: 500;">Crea</h2>
+                                    <h2 class="orange-text right-align" style="font-weight: 500;">Administra</h2>
+                                </div>
+                            </div>
+                            <div class="col s12 m4 l2 ">
+
+                            </div>
+                        </div>
+
+
+
+
 
 
 
