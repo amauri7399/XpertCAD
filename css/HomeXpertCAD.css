@@ -12823,7 +12823,7 @@
             background-blend-mode: overlay;
         }
         
-        ._fondorespaldo:before {
+        ._fondorespaldo1:before {
             position: absolute;
             content: "";
             height: 100%;
