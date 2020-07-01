@@ -12738,7 +12738,57 @@
             content: "";
             height: 100%;
             width: 100%;
-            background: url("../images/Fondo.png") repeat;
+            background: url("../images/Fondos/Fondo1.png") repeat;
+            top: 0;
+            z-index: -1;
+        }
+        
+        ._fondo2:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: url("../images/Fondos/Fondo2.png") repeat;
+            top: 0;
+            z-index: -1;
+        }
+        
+        ._fondo3:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: url("../images/Fondos/Fondo3.png") repeat;
+            top: 0;
+            z-index: -1;
+        }
+        
+        ._fondo4:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: url("../images/Fondos/Fondo4.png") repeat;
+            top: 0;
+            z-index: -1;
+        }
+        
+        ._fondo5:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: url("../images/Fondos/Fondo5.png") repeat;
+            top: 0;
+            z-index: -1;
+        }
+        
+        ._fondo6:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: url("../images/Fondos/Fondo6.png") repeat;
             top: 0;
             z-index: -1;
         }
