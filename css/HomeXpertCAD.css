@@ -12734,56 +12734,96 @@
         }
         
         ._fondo1:before {
+            background: url("../images/Fondos/Fondo1.png") repeat;
+            display: block;
             position: absolute;
             content: "";
-            height: 100%;
-            width: 100%;
-            background: url("../images/Fondos/Fondo1.png") repeat;
             top: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
         }
         
         ._fondo2:before {
+            background: url("../images/Fondos/Fondo2.png") repeat;
+            display: block;
             position: absolute;
             content: "";
-            height: 100%;
-            width: 100%;
-            background: url("../images/Fondos/Fondo2.png") repeat;
             top: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
         }
         
         ._fondo3:before {
+            background: url("../images/Fondos/Fondo3.png") repeat;
+            display: block;
             position: absolute;
             content: "";
-            height: 100%;
-            width: 100%;
-            background: url("../images/Fondos/Fondo3.png") repeat;
             top: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
         }
         
         ._fondo4:before {
+            background: url("../images/Fondos/Fondo4.png") repeat;
+            display: block;
             position: absolute;
             content: "";
-            height: 100%;
-            width: 100%;
-            background: url("../images/Fondos/Fondo4.png") repeat;
             top: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
         }
         
         ._fondo5:before {
+            background: url("../images/Fondos/Fondo5.png") repeat;
+            display: block;
             position: absolute;
             content: "";
-            height: 100%;
-            width: 100%;
-            background: url("../images/Fondos/Fondo5.png") repeat;
             top: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
         }
         
         ._fondo6:before {
+            background: url("../images/Fondos/Fondo6.png") repeat;
+            display: block;
+            position: absolute;
+            content: "";
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+        
+        ._fondorespaldo:before {
             position: absolute;
             content: "";
             height: 100%;
