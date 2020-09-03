@@ -895,7 +895,7 @@ autoplay()
 
 function autoplay() {
     $('.carousel').carousel('next');
-    setTimeout(autoplay, 4500);
+    setTimeout(autoplay, 10500);
 }
 
 
@@ -911,4 +911,8 @@ $('.tabs-vertical').on('click', 'li', function() {
 
 $(window).resize(function() {
     $('.active').css({ 'height': $('.active').find('div').outerHeight() });
+});
+
+$(document).ready(function() {
+    $('.parallax').parallax();
 });

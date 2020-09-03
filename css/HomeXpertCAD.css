@@ -2626,6 +2626,10 @@
             box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
         }
         
+        .z-depth-6 {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+        
         .hoverable {
             transition: box-shadow .25s;
             box-shadow: 0;
@@ -4488,6 +4492,14 @@
             font-weight: 700;
         }
         
+        @font-face {
+            font-family: "ModernLove-RegularSlanted";
+            src: url("./fonts/Modern.woff2") format("woff2");
+            /* Modern Browsers */
+            font-weight: normal;
+            font-style: normal;
+        }
+        
         a {
             text-decoration: none;
         }
@@ -5322,7 +5334,6 @@
             height: 36px;
             line-height: 36px;
             padding: 0 2rem;
-            text-transform: uppercase;
             vertical-align: middle;
             -webkit-tap-highlight-color: transparent;
         }
@@ -5594,12 +5605,7 @@
         
         .btn-flat:focus,
         .btn-flat:hover {
-            background-color: rgba(0, 0, 0, 0.1);
             box-shadow: none;
-        }
-        
-        .btn-flat:active {
-            background-color: rgba(0, 0, 0, 0.2);
         }
         
         .btn-flat.disabled {
@@ -5625,13 +5631,13 @@
             background-color: #fff;
             margin: 0;
             display: none;
-            min-width: 100px;
+            min-width: 300px;
             max-height: 650px;
             overflow-y: auto;
             opacity: 0;
-            position: absolute;
             z-index: 999;
             will-change: width, height;
+            transform: translateY(34px);
         }
         
         .dropdown-content li {
@@ -6150,7 +6156,7 @@
         /* Style Placeholders */
         
          ::-webkit-input-placeholder {
-            color: #d1d1d1;
+            color: #b3b3b3;
         }
         
          :-moz-placeholder {
@@ -11736,11 +11742,6 @@
             color: #eee;
         }
         
-        body.light-theme {
-            background-color: #fff;
-            color: #444;
-        }
-        
         @media only screen and (min-width: 993px) {
             .container {
                 width: 80%;
@@ -11790,7 +11791,7 @@
             display: block;
             position: absolute;
             top: 0;
-            width: auto;
+            width: 100%;
             height: 100%;
             z-index: -1;
         }
@@ -11803,10 +11804,9 @@
             height: 100%;
             z-index: -1;
             background-position: center center;
-            background-attachment: fixed;
             background-size: cover;
             background-blend-mode: overlay;
-            background-image: url("../images/Aprende/Quien puede aprender.jpg"), linear-gradient(90deg, #000000 5%, #ebeeee26 74%);
+            background-image: url("../images/Aprende/Mujer6.jpg"), linear-gradient(100deg, #ffffff6b 14%, #ffffff00);
         }
         
         .background2 {
@@ -11966,7 +11966,7 @@
         .dropdown-content li>a::before,
         .dropdown-content li>span::before,
         .side-nav li>a::before {
-            background-color: #26a69a;
+            background-color: #ff8f00;
             left: -10px;
             width: 2px;
             height: 100%;
@@ -12280,7 +12280,6 @@
             padding-bottom: 65px;
             height: 100%;
             overflow: hidden;
-            background-color: #000;
             z-index: 3;
         }
         
@@ -12344,7 +12343,7 @@
             position: relative;
             overflow: hidden;
             background-color: transparent;
-            box-shadow: none;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             border: 2px solid #eee;
             border-radius: 5px;
             box-sizing: content-box;
@@ -12362,6 +12361,7 @@
             left: 0;
             width: calc(100% + 40px);
             height: 100%;
+            box-shadow: 20px rgba(46, 229, 157, 0.4);
             background-color: #eee;
             -webkit-transform: skewX(-45deg) translateX(calc(-100% - 20px));
             transform: skewX(-45deg) translateX(calc(-100% - 20px));
@@ -12377,6 +12377,7 @@
         .btn-floating:hover {
             box-shadow: none;
             background-color: #eee;
+            box-shadow: 0px 1px 25px #ff9900bc;
             color: #444;
         }
         
@@ -12747,8 +12748,22 @@
             background-blend-mode: overlay;
         }
         
+        ._fondo12:before {
+            background: url("../images/Fondos/Fondo12.png") repeat;
+            display: block;
+            position: absolute;
+            content: "";
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-position: center center;
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+        
         ._fondo2:before {
-            background: url("../images/Fondos/Fondo22.png") repeat;
+            background: url("../images/Fondos/Fondo11.png") repeat;
             display: block;
             position: absolute;
             content: "";
@@ -12763,7 +12778,7 @@
         }
         
         ._fondo3:before {
-            background: url("../images/Fondos/Fondo33.png") repeat;
+            background: url("../images/Fondos/Fondo11.png") repeat;
             display: block;
             position: absolute;
             content: "";
@@ -12778,7 +12793,7 @@
         }
         
         ._fondo4:before {
-            background: url("../images/Fondos/Fondo44.png") repeat;
+            background: url("../images/Fondos/Fondo11.png") repeat;
             display: block;
             position: absolute;
             content: "";
@@ -12793,7 +12808,7 @@
         }
         
         ._fondo5:before {
-            background: url("../images/Fondos/Fondo55.png") repeat;
+            background: url("../images/Fondos/Fondo11.png") repeat;
             display: block;
             position: absolute;
             content: "";
@@ -12808,7 +12823,7 @@
         }
         
         ._fondo6:before {
-            background: url("../images/Fondos/Fondo66.png") repeat;
+            background: url("../images/Fondos/Fondo11.png") repeat;
             display: block;
             position: absolute;
             content: "";
@@ -12864,8 +12879,7 @@
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             position: relative;
             overflow: hidden;
-            width: 768px;
-            min-height: 510px;
+            height: 700px;
         }
         
         .form-container form {
@@ -12946,7 +12960,7 @@
             justify-content: center;
             align-items: center;
             padding: 0 40px;
-            height: 100%;
+            height: 90%;
             width: 50%;
             text-align: center;
             transform: translateX(0);
@@ -12991,18 +13005,6 @@
         
         .container1.right-panel-active .overlay-right {
             transform: translateX(20%);
-        }
-        
-        @media screen and (max-width: 1024px) and (orientation:landscape) {
-            body {
-                background-color: brown;
-            }
-        }
-        
-        @media screen and (max-width: 1024px) and (orientation:portrait) {
-            body {
-                background-color: DarkSeaGreen;
-            }
         }
         /* Push SideNAV*/
         
@@ -13057,6 +13059,12 @@
         
         hr.left1azul1 {
             border: 1px solid #ff8f00;
+            width: 120px;
+            float: center;
+        }
+        
+        hr.centerwhite {
+            border: 1px solid #ffffff;
             width: 120px;
             float: center;
         }
@@ -13392,4 +13400,85 @@
             animation: zoom 30s;
             background-image: radial-gradient( white, black);
         }
-        /* video MisterX*/
+        
+        hand {
+            transform-origin: 100% 100%;
+            animation: hand 350ms ease-in-out infinite alternate;
+            float: right;
+            font-size: 48px;
+        }
+        
+        @keyframes hand {
+            0% {
+                transform: translate(-50%, 0) rotate(15deg);
+            }
+            100% {
+                transform: translate(-50%, 0) rotate(-10deg);
+            }
+        }
+        
+        svg {
+            width: 100px;
+            display: block;
+            margin: 40px auto 0;
+        }
+        
+        .path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+        }
+        
+        .path.circle {
+            -webkit-animation: dash 3.9s infinite;
+            animation: dash 2.9s infinite;
+        }
+        
+        .path.check {
+            stroke-dashoffset: -100;
+            -webkit-animation: dash-check 3.9s 0.35s infinite;
+            animation: dash-check 3.0s 0.35s infinite;
+            font-size: 20px;
+        }
+        
+        @-webkit-keyframes dash {
+            0% {
+                stroke-dashoffset: 1000;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        @keyframes dash {
+            0% {
+                stroke-dashoffset: 1000;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        @-webkit-keyframes dash-check {
+            0% {
+                stroke-dashoffset: -100;
+            }
+            100% {
+                stroke-dashoffset: 900;
+            }
+        }
+        
+        @keyframes dash-check {
+            0% {
+                stroke-dashoffset: -100;
+            }
+            100% {
+                stroke-dashoffset: 900;
+            }
+        }
+        
+        .truncate2 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }

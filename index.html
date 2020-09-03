@@ -7,281 +7,360 @@
     <title>XpertCAD</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="https://accounts.xpertcad.com/assets/images/fav.png" type="image/x-icon" rel="shortcut icon">
     <link rel="stylesheet" href="css/HomeXpertCAD.css">
-
+    <link rel="stylesheet" href="css/mask.css">
+    <link rel="stylesheet" href="css/color-body.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="css/video.css">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171523709-1"></script>
+    <link rel="stylesheet" href="./style.css">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171523709-1');
+    </script>
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .Modern {
+            font-family: 'ModernLove-RegularSlanted';
+        }
+        
+        .candara {
+            font-family: 'Candara';
+        }
+    </style>
 
 
+    <style>
+        .list-group .list-group-item:hover {
+            background: #337ab7;
+            cursor: pointer;
+            color: #fff;
+        }
+        
+        .content {
+            margin: 30px auto;
+            height: 500px;
+            border-radius: 55;
+            box-shadow: 0 2px 1px 0 #dcdcdc, 0 -2px 1px 0 #dcdcdc;
+            ;
+        }
+        
+        .red {
+            background: red;
+        }
+        
+        .videox {
+            -webkit-filter: drop-shadow( 0px 10px 1px rgba(26, 172, 45, 0.75));
+            filter: drop-shadow(0px 10px 1px rgba(26, 172, 45, 0.75));
+        }
+        
+        .blue {
+            background: blue;
+        }
+        
+        .purple {
+            background: purple;
+        }
+        
+        .orange {
+            background: orange;
+        }
+        
+        .black {
+            background: black;
+        }
+        
+        #bg {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+        }
+        
+        #list-content {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        #list-content li {
+            color: #fff;
+            list-style: none;
+            font-size: 40px;
+            display: none;
+        }
+    </style>
 </head>
 
-<body class="_fondo1">
-    <a class="waves-effect waves-light btn amber darken-3 SideNavBott btnfixed " id="SideNavBott" style=" font-weight: 400;
-    "><i class="material-icons right  ">exposure_plus_1
-</i>Noticias
-     </a>
+<body id="color-body">
+    <canvas class="js--canvas"></canvas>
+    <!-- Navbar -->
+    <nav class="navbar navbar-solid-transition ">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img class="responsive-img hide-on-small-only" src="images/Xpertcad.png" width="190px " style="transform: translateY(10px);">
+                </i>
+            </a>
+            <a href="#" class="brand-logo center-align hide-on-large-only hide-on-med-and-up "><img class="responsive-img" src="images/Xpertcad.png" width="180px " style="transform: translateY(5px) translateX(65px);">
+                </i>
+            </a>
+            <a href="#" data-activates="slide-out" class="button-collapse right show-on-large hide-on-med-and-down "><i class="material-icons black-text">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="http://accounts.xpertcad.com/" class="waves-effect waves-light btn orange" style="
+                padding-left: 24px;
+                padding-right: 24px; border-radius: 5px;  font-weight: 400; margin: 0 1rem; 
+            ">Iniciar sesión</a></li>
+                <li><a href="#" class="noHover grey-text text-darken-1 " style="font-size:30px; font-weight: 100; margin: 0 1rem;">|</a></li>
 
-    <div id="SideNavRight" class="SideNavRight grey lighten-3 ">
-        <a href="javascript:void(0)" class=" SideNavBott grey-text text-darken-1 right" id="SideNavBott" style="transform: translateX(-20px);"><span class="material-icons">
-            close
-            </span></a>
-        <div style="margin: 10px;">
-            <img class="responsive-img  materialboxed" src="images/Home/Info usuario XpertCAD E-learning_Mesa de trabajo 1.png">
-
+            </ul>
         </div>
-    </div>
-    <div id="contentmain">
-        <!-- Navbar -->
-        <nav class="navbar navbar-solid-transition ">
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo"><img class="responsive-img hide-on-small-only" src="images/Xpertcad.png" width="220px " style="transform: translateY(10px);">
-                    </i>
-                </a>
-                <a href="#" class="brand-logo center-align hide-on-large-only hide-on-med-and-up"><img class="responsive-img" src="images/Xpertcad.png" width="220px " style="transform: translateY(10px) translateX(60px);">
-                    </i>
-                </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="Aprende.html">Aprende</a></li>
-                    <li><a href="Crea.html">Crea</a></li>
-                    <li><a href="Crea2.html">Crea2</a></li>
-                    <li><a href="#">Administra</a></li>
-                    <li><a href="#">¿Quiénes somos?</a></li>
-                    <li><a href="#" class="noHover grey-text text-darken-1 " style="font-size:30px; font-weight: 100; margin: 0 1rem;">|</a></li>
-                    <li><a href="SingUp.html" class="waves-effect waves-light btn amber darken-3 " style="
-                    padding-left: 24px;
-                    padding-right: 24px; border-radius: 5px;  font-weight: 400; margin: 0 1rem; 
-                ">Iniciar sesión</a></li>
-                </ul>
-                <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons black-text">menu</i></a>
-            </div>
-        </nav>
-        <ul id="slide-out" class="side-nav">
+    </nav>
+    <ul id="slide-out" class="side-nav">
+        <li><a class="waves-effect waves-orange" href="index.html">Inicio</a></li>
+        <li><a class="waves-effect waves-orange" href="Aprende.html">Aprende</a></li>
+        <li><a class="waves-effect waves-orange" href="Crea.html">Crea</a></li>
+        <li><a class="waves-effect waves-orange" href="Administra.html">Administra</a></li>
+        <li><a class="waves-effect waves-orange" href="Servicios.html">Servicios</a></li>
+        <li><a class="waves-effect waves-orange" href="Nostros.html">Nosotros</a></li>
+        <li><a class="waves-effect waves-orange" href="Contacto.html">Contacto</a></li>
+        <li><a class="waves-effect waves-orange" href="http://accounts.xpertcad.com/">Iniciar sesion</a></li>
+    </ul>
 
-            <li><a class="waves-effect waves-teal" href="index.html">Inicio</a></li>
-            <li><a class="waves-effect waves-teal" href="Aprende.html">Aprende</a></li>
-            <li><a class="waves-effect waves-teal" href="Crea.html">Crea</a></li>
-            <li><a class="waves-effect waves-teal" href="#">Administra</a></li>
-            <li><a class="waves-effect waves-teal" href="#">¿Qué somos?</a></li>
-            <li><a class="waves-effect waves-teal" href="SingUp.html">Iniciar sesion</a></li>
-            <li><a class="waves-effect waves-teal" href="SingUp.html">Registrarse</a></li>
-
-        </ul>
+    <div class="section  full-height _fondo1 " id="color-body ">
 
 
-        <div class="section white full-height _fondo1">
-            <div class="container">
-                <div class="row ">
-                    <!--Para escritorio-->
-                    <div class="col s12 m12 l6 xl6 hide-on-small-only" style="margin-top:10%; display: flexbox;">
-                        <h2 style="letter-spacing: -1.5px; font-weight: 500; font-size: 2.95vw; " class="left-align ">Formar para transformar vidas, intégrate a XpertCAD
-                        </h2>
-                        <h5 class=" left-align flow-text" style="font-weight: 300; font-size: 1.33vw;letter-spacing: 0.25px;">La plataforma de capacitación y especialización en línea más completa del mercado.
-                        </h5>
-                        <h5 class=" left-align flow-text" style="font-weight: 300;font-size: 1.33vw;letter-spacing: 0.25px; ;letter-spacing: 0.25px;">
-                            Crea, aprende, comparte y administra el aprendizaje de quienes están cambiando al mundo
+        <h3 class="center-align Modern grey-text text-darken-2 " style="font-weight: 300; ">"Trasciende a través del conocimiento” </h3>
 
-                        </h5>
+        <div id="wrapper">
+            <div class="row">
 
-                        <div class="col s12 m4 l4 xl4" style="transform: translateX(-10px);">
-                            <a class="waves-effect waves-light btn-large orange " style="font-weight: 500; ">Empezar ahora</a>
-
-                        </div>
-                        <div class="col s12 m4 l4 xl4">
-                            <div class="rw-words rw-words-1 ">
-                                <h3 class="orange-text right-align" style="font-weight: 500;">Aprende</h3>
-                                <h3 class="orange-text right-align" style="font-weight: 500;">Crea</h3>
-                                <h3 class="orange-text right-align" style="font-weight: 500;">Administra</h3>
-                                <h3 class="orange-text right-align" style="font-weight: 500;">Aprende</h2>
-                                    <h3 class="orange-text right-align" style="font-weight: 500;">Crea</h3>
-                                    <h3 class="orange-text right-align" style="font-weight: 500;">Administra</h3>
-                            </div>
-                        </div>
-                        <a class="btn-large grey-text text-darken-1  hide" style="font-weight: 500; border: 2px solid rgb(255, 255, 255); "><i class="material-icons left grey-text text-darken-1 ">play_circle_filled
-                                            </i>¿Quiénes somos?</a>
-
-
+                <div class="col s12 m2 l2 center-align crea creaX" style="padding-top: 10%;">
+                    <a href="" class="videox"></a>
+                    <div id="btn1" class="btn-flat candara black-text  dropdown-button texth4P underline " data-activates="dropdown1">
+                        Crea
                     </div>
-                    <!--Para moviles-->
-                    <div class="col s12 m12 l6 xl6 hide-on-large-only" style="margin-top:10%; display: flexbox;">
-                        <h2 style="letter-spacing: -1.5px; font-weight: 500; " class="center-align h2">Formar para transformar vidas, intégrate a XpertCAD
-                        </h2>
-                        <h5 class="  flow-text h5 center-align" style="font-weight: 300; letter-spacing: 0.25px;">La plataforma de capacitación y especialización en línea más completa del mercado.
-                        </h5>
-                        <h5 class=" flow-text h5 center-align" style="font-weight: 300;letter-spacing: 0.25px; ;letter-spacing: 0.25px;">
-                            Crea, aprende, comparte y administra el aprendizaje de quienes están cambiando al mundo
-
-                        </h5>
-
-                        <div class="center-align">
-                            <a class=" waves-effect waves-light btn-large orange " style="font-weight: 500; ">Empezar ahora</a>
-
-                        </div>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <p class="black-text"> Crea los contenidos y difunde los conocimientos, que ayudarán a preparar los profesionistas del mañana
+                        </p>
+                        <a href="https://xpertcad.com/Crea.html" class="waves-effect waves-teal btn-flat" style="border:1px solid orange;">ir a crea</a>
                         <br>
-
-                        <a class="btn-large grey-text text-darken-1 hide " style="font-weight: 500; border: 2px solid rgb(255, 255, 255); "><i class="material-icons left grey-text text-darken-1 ">play_circle_filled
-                                            </i>¿Quiénes somos?</a>
-
-
+                        <br>
+                    </ul>
+                </div>
+                <div class="col s12 m2 l2 center-align industria industriaX" style="padding-top: 10%;">
+                    <div id="btn2" class="btn-flat candara black-text  dropdown-button texth4P underline2" data-activates="dropdown2">Industria 4.0
                     </div>
-                    <div class=" col s12 m12 l6 xl6 hide-on-small-only " style="margin-top:3%; display: flexbox; ">
-                        <img class="responsive-img " src="images/fondo3.png " width="1920PX ">
+                    <ul id="dropdown2" class="dropdown-content">
+                        <p class="black-text"> Crea los contenidos y difunde los conocimientos, que ayudarán a preparar los profesionistas del mañana
+                        </p>
+                        <a href="https://xpertcad.com/Crea.html" class="waves-effect waves-teal btn-flat" style="border:1px solid orange;">ir a crea</a>
+                        <br>
+                        <br>
+                    </ul>
+                </div>
+                <div class="col s12 m4 l4 image-container" id="misterx">
 
+                    <video class="masked add responsive-video" id="theVideo" autoplay muted="muted" preload="auto" loop="loop" width="640" height="480">
+                        <div id="dragHandle"></div>
+                            <source src="Videos/crea.mp4" type="video/mp4">
+                          </video>
+                </div>
+                <div class="col s12 m2 l2 center-align xcadstore xcadstoreX" style="padding-top: 10%;">
+                    <div id="btn3" class="btn-flat candara black-text  dropdown-button texth4P underline3" data-activates="dropdown3">Xpertcad Store
                     </div>
-                    <div class=" col s12 m12 l6 xl6 hide-on-large-only " style="margin-top:3%; display: flexbox; ">
-                        <div class="center-align ">
-                            <img class="responsive-img " src="images/fondo3.png " width="190PX ">
-
-                        </div>
-
+                    <ul id="dropdown3" class="dropdown-content">
+                        <p class="black-text"> Crea los contenidos y difunde los conocimientos, que ayudarán a preparar los profesionistas del mañana
+                        </p>
+                        <a href="https://xpertcad.com/Crea.html" class="waves-effect waves-teal btn-flat" style="border:1px solid orange;">ir a crea</a>
+                        <br>
+                        <br>
+                    </ul>
+                </div>
+                <div class="col s12 m2 l2 center-align servicios serviciosX" style="padding-top: 10%;">
+                    <div id="btn4" class="btn-flat candara black-text  dropdown-button texth4P underline5" data-activates="dropdown4">Servicios
                     </div>
+                    <ul id="dropdown4" class="dropdown-content">
+                        <p class="black-text"> Crea los contenidos y difunde los conocimientos, que ayudarán a preparar los profesionistas del mañana
+                        </p>
+                        <a href="https://xpertcad.com/Crea.html" class="waves-effect waves-teal btn-flat" style="border:1px solid orange;">ir a crea</a>
+                        <br>
+                        <br>
+                    </ul>
                 </div>
             </div>
 
-        </div>
+            <div id=divs>
 
 
-        <div class="section full-height _fondo1 white ">
-            <div class="container ">
-                <div class="row ">
-                    <div class="col s12 m6 l6 xl6 ">
-                        <img class="responsive-img feature right-in-out fade-in-out " src="images/Home/mockup26.png " width="600px">
-                    </div>
-                    <div class="col s12 m6 l6 xl6 feature left-in-out fade-in-out ">
-                        <h2 style=" font-weight: 500; letter-spacing: -1.5px; margin-bottom: 20px; " class="left-align grey-text text-darken-5 feature h2 ">Aprende</h2>
-                        <span class="left-align grey-text text-darken-5 flow-text " style="letter-spacing: 0.5px; ">Experiencias que cambiarán tu futuro y te preparan para los nuevos desafíos.
 
-                </div>
-            </div>
-        </div>
-
-
-        <div class="section full-height  _fondo1 "  style="background-color: #F0F2F5;  margin-bottom: 10px;">
-            <div class="container ">
-                <div class="row ">
-                    <div class="col s12 m6 l6 xl6 feature right-in-out fade-in-out ">
-                        <h2 style="letter-spacing: -1.5px; font-weight: 500; margin-bottom: 20px; " class="left-align grey-text text-darken-5 h2 ">Crea</h1>
-                            <span class="left-align grey-text text-darken-5 flow-text " style="letter-spacing: 0.5px; ">Impulsa el conocimiento a nuevas generaciones con la finalidad de abrirles un abanico de posibilidades de aprendizaje. </span>
-                    </div>
-                    <div class="col s12 m6 l6 xl6 ">
-                        <img class="responsive-img feature left-in-out fade-in-out " src="images/pantalla.png ">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="section full-height _fondo1 white ">
-            <div class="container ">
-                <div class="row ">
-                    <div class="col s12 m6 l6 xl6 ">
-                        <img class="responsive-img feature right-in-out fade-in-out " src="images/pantalla.png ">
-                    </div>
-                    <div class="col s12 m6 l6 xl6 feature left-in-out fade-in-out ">
-                        <h2 style="letter-spacing: -1.5px; font-weight: 500; margin-bottom: 20px; " class="left-align grey-text text-darken-5 h2 ">Administra</h1>
-                            <span style="letter-spacing: 0.5px; " class="left-align grey-text text-darken-5 flow-text ">Deseas conocer el avance de los participantes a tus cursos, su desempeño, o simplemente quieres administrar quién tiene acceso y quién no, con XpertCAD podrás conocer esta información y más.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section white _fondo5 " style="height: auto; ">
-            <div class=" row valign ">
-                <div class="col s12 m10 offset-m1 ">
-                    <div class="row ">
-                        <div class="col s12 feature right-in-out ">
-                            <h2 style=" font-weight: 500; letter-spacing: -1.5px; margin-bottom: 20px; " class="left-align grey-text text-darken-5 h2 ">Conoce los beneficios de trabajar en XpertCAD</h2>
-                            <span style="letter-spacing: 0.15px; " class="left-align grey-text text-darken-5 flow-text ">En una sola plataforma podrás comprender cómo evoluciona la formación y conocimientos de los que son parte de tu comunidad, de tu empresa, de tu institución. Administra el acceso al conocimiento como consideres sea adecuado.</span>
-                        </div>
-                    </div>
-                    <div class="row staggered-transition-wrapper " data-duration="0 " data-staggereddelay=".9 ">
-                        <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-cloud-upload green-text text-accent-4 "></i></h4>
-                            <p class="caption " style="font-weight: 300; ">Disponible 24/7 desde cualquier dispositivo: XpertCAD no requiere de instalación, gracias a que se aloja en la nube podrás navegar en cualquier lado, a cualquier hora, desde cualquier sistema y dispositivo.</p>
-                        </div>
-                        <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-speedometer pink-text text-darken-1 "></i></h4>
-                            <p class="caption " style="font-weight: 300; ">Monitorea el desempeño de tus usuarios: Nuestra plataforma está diseñada para crear contenidos, administrarlo y compartirlo fácilmente.</p>
-                        </div>
-                        <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-lock pink-text yellow-text text-darken-2 "></i></h4>
-                            <p class="caption " style="font-weight: 300; ">Siempre contarás con confidencialidad y seguridad, tú o tu institución tienen un espacio espacio específico (tenant) para almacenar exclusivamente toda la información que necesiten.</p>
-                        </div>
-                        <div class="col s12 ">
-
-                        </div>
-                        <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-shield blue-text text-lighten-1 "></i></h4>
-                            <p class="caption " style="font-weight: 300; ">Almacena tu información en la nube con los servidores más seguros y potentes del mercado, Amazon Web Services (AWS).</p>
-                        </div>
-                        <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-clock blue-grey-text text-darken-2 "></i></h4>
-                            <p class="caption " style="font-weight: 300; ">No te preocupes por tu información, recuerda que todos los contenidos que generes cuentan con respaldo (backup) cada 24 hrs.</p>
-                        </div>
-
-                        <div class="col s12 m12 l4 xl4 fade-in-out ">
-                            <h4><i class="icon-equalizer deep-purple-text text-lighten-1 "></i></h4>
-                            <p class="caption " style="font-weight: 300; ">Desde un solo panel podrás monitorear el avance y desempeño de cada usuario, por actividad o manera global</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section full-height amber darken-3 _fondo1 ">
-            <div class="container center scale-in-out fade-in-out ">
-                <h2 class="white-text h2 " style="font-weight: 500; ">La educación es el arma más poderosa que podemos usar para cambiar el mundo.</h2>
-                <p>Nelson Mandela</p>
-                <a class="waves-effect waves-light btn-large orange " style="font-weight: 500; ">Empezar ahora</a>
 
             </div>
         </div>
+        <div class="container ">
+            <h4 class="black-text center-align ">
+                La plataforma que ofrece diversas soluciones centradas en crear, desarrollar e impulsar el conocimiento, como la mejor herramienta para poder generar un cambio positivo en nuestro entorno.
+            </h4>
+        </div>
 
-        <footer class="page-footer">
-            <div class="container ">
-                <div class="row ">
-                    <div class="col s6 m3 ">
-                        <img class="materialize-logo responsive-img " src="images/Xpertcad.png " width="200px " alt=" XpertCAD ">
-                        <p>Desarrollado por el equipo XpertCAD.</p>
-                    </div>
-                    <div class="col s6 m3 ">
-                        <h5>Acerca de</h5>
-                        <ul>
-                            <li><a href="#! ">Lorem</a></li>
-                            <li><a href="#! ">Lorem</a></li>
-                            <li>
-                                <a href="#! ">Lorem</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col s6 m3 ">
-                        <h5>Contacto</h5>
-                        <ul>
-                            <li><a href="#! ">Comunidad</a></li>
-                            <li>
-                                <a href="#! ">Blog</a>
-                            </li>
-                            <li><a href="#! ">Correo</a></li>
-                        </ul>
-                    </div>
-                    <div class="col s6 m3 ">
-                        <h5>Redes sociales</h5>
-                        <ul>
-                            <li><a href="#! ">Twitter</a></li>
-                            <li><a href="#! ">Facebook</a></li>
-                            <li><a href="#! ">Github</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
 
 
-    <!-- Scripts -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js "></script>
-    <script src="js/materialize.min.js "></script>
+
+    <div class="section full-height amber darken-3 _fondo12 ">
+        <div class=" container center scale-in-out fade-in-out ">
+            <h2 class="white-text h2 " style="font-weight: 500; ">La educación es el arma más poderosa que podemos usar para cambiar el mundo.</h2>
+            <p>Nelson Mandela</p>
+            <a href="http://accounts.xpertcad.com/ " class="waves-effect waves-light btn-large orange " style="font-weight: 500; ">Empezar ahora</a>
+
+        </div>
+    </div>
+
+    <div class="section full-height amber darken-4 ">
+        <div class=" container center ">
+            <div class="row ">
+                <div class="col s12 m5 ">
+                    <div class="left-align ">
+                        <img class="responsive-img " src="images/XpertcadBlanco.png " width="450 ">
+                    </div>
+
+                </div>
+                <div class="col s12 m1 ">
+                    <div class="left-align " style="transform: translatey(30px); ">
+                        <a href=" ">
+                            <img class="responsive-img " src="images/Facebook.png " width="50 ">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m1 ">
+                    <div class="left-align " style="transform: translatey(30px); ">
+                        <a href=" ">
+                            <img class="responsive-img " src="images/Linkedin icon.png " width="50 ">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m1 ">
+                    <div class="left-align " style="transform: translatey(30px); ">
+                        <a href=" ">
+                            <img class="responsive-img " src="images/instagram.png " width="50 ">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m1 ">
+                    <div class="left-align " style="transform: translatey(30px); ">
+                        <a href=" ">
+                            <img class="responsive-img " src="images/Twitter.png " width="50 ">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m1 ">
+                    <div class="left-align " style="transform: translatey(30px); ">
+                        <a href=" ">
+                            <img class="responsive-img " src="images/YOU TUBE.png " width="50 ">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer orange darken-4 ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col s6 m2 ">
+                    <h5 class="white-text ">Plataforma crea</h5>
+                    <ul>
+                        <li><a href=" " class="white-text ">Crea</a></li>
+                        <li><a href=" " class="white-text ">Administra</a></li>
+                        <li><a href=" " class="white-text ">Aprende</a></li>
+                    </ul>
+                </div>
+                <div class="col s6 m4 ">
+                    <h5 class="white-text ">Servicios profesionales
+                    </h5>
+                    <ul>
+                        <li><a href=" " class="white-text ">Experiencias de formación especializadas
+                            </a></li>
+                        <li><a href=" " class="white-text ">Desarrollo de proyectos o experiencias en realidad aumentada y realidad virtual
+                            </a></li>
+                        <li><a href=" " class="white-text ">Simuladores de aprendizaje virtual 
+                            </a></li>
+                        <li><a href=" " class="white-text ">Desarrollo de experiencias de aprendizaje con conectividad IIoT
+    
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="col s6 m4 ">
+                    <h5 class="white-text ">INDUSTRIA 4.0
+
+                    </h5>
+                    <ul>
+                        <li><a href=" " class="white-text ">EModelado 3D
+                            </a></li>
+                        <li><a href=" " class="white-text ">Simulación 
+                            </a></li>
+                        <li><a href=" " class="white-text ">Manufactura Aditiva 
+                            </a></li>
+                        <li><a href=" " class="white-text ">Manufactura sustractiva 
+                            </a></li>
+                        <li><a href=" " class="white-text ">Virtualización de procesos 
+
+                            </a></li>
+                        <li><a href=" " class="white-text ">Realidad Aumentada 
+
+                            </a></li>
+                        <li><a href=" " class="white-text ">Realidad Virtual 
+
+                            </a></li>
+                        <li><a href=" " class="white-text ">Internet Industrial de las Cosas 
+
+                            </a></li>
+
+
+                    </ul>
+                </div>
+                <div class="col s6 m2 ">
+                    <h5 class="white-text ">Contacto</h5>
+                    <ul>
+                        <li><a target="_blank " class="white-text " href="https://api.whatsapp.com/send?phone=521 442 114 5914&text=Hola!%20Quiero%20contactarme%20con%20ustedes! ">Whatsapp</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="footer-copyright ">
+            <div class="container ">
+
+
+                Desarrollado por el equipo XpertCAD<sup>&#174; </sup>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/materialize.js "></script>
 
     <!-- External libraries -->
     <script src="js/imagesloaded.pkgd.min.js "></script>
@@ -292,8 +371,29 @@
     <script src="js/animation.gsap.min.js "></script>
 
     <!-- Initialization script -->
-    <script src="js/startup.js "></script>
-    <script src="js/init.js "></script>
+    <script src="js/startup.js"></script>
+    <script src="js/init.min.js "></script>
+    <script src="js/Puntero.js "></script>
+    <!-- partial -->
+    <script src="js/color-body.js "></script>
+    <script src="js/video.js "></script>
+    <script>
+        // image array
+        var image = ["crea", "industria", "store", "servicios", "orange", "black"];
+
+        $(".list-group li").hover(function() {
+            var value = $(this).index();
+            hoverContent(value);
+        });
+
+        function hoverContent(value) {
+            $("#list-content li").removeClass('show');
+            $("#list-content li:nth-child(" + value + ")").addClass("show");
+            $("#bg").removeClass();
+            $("#bg").addClass(image[value]);
+        }
+    </script>
+
 </body>
 
 </html>

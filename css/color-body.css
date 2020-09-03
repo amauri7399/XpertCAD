@@ -1,0 +1,59 @@
+/* Hover del body */
+
+.color-crea {
+    background-color: #fffefa !important;
+}
+
+.color-industria {
+    background-color: #fafafa !important;
+}
+
+.color-xcadstore {
+    background-color: #fffbfc !important;
+}
+
+.color-servicios {
+    background-color: #f8fcff !important;
+}
+
+.color-crea,
+.color-industria,
+.color-xcadstore,
+.color-servicios {
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all 1.2s ease-in;
+    -ms-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.x-crea {
+    -webkit-filter: drop-shadow( 0px 10px 1px #ef6c00);
+    filter: drop-shadow(0 10px 1px #ef6c00);
+}
+
+.x-industria {
+    -webkit-filter: drop-shadow( 0px 10px 1px #607d8b);
+    filter: drop-shadow(0 10px 1px #607d8b);
+}
+
+.x-xcadstore {
+    -webkit-filter: drop-shadow( 0px 10px 1px #b71c1c);
+    filter: drop-shadow(0 10px 1px #b71c1c);
+}
+
+.x-servicios {
+    -webkit-filter: drop-shadow( 0px 10px 1px #0277bd);
+    filter: drop-shadow(0 10px 1px #0277bd);
+}
+
+.x-crea,
+.x-industria,
+.x-xcadstore,
+.x-servicios {
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all 1.2s ease-in;
+    -ms-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
