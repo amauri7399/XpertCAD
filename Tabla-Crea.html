@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://accounts.xpertcad.com/assets/images/fav.png" type="image/x-icon" rel="shortcut icon">
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/HomeXpertCAD.css">
     <link rel="stylesheet" href="css/mask.css">
     <link rel="stylesheet" href="css/color-body.css">
@@ -29,8 +30,91 @@
 
         gtag('config', 'UA-171523709-1');
     </script>
-
-
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .sample {
+            font-family: 'ModernLove-RegularSlanted';
+        }
+        
+        .candara {
+            font-family: 'Candara';
+        }
+    </style>
+    <style>
+        .task {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            -webkit-perspective: 800px;
+            perspective: 800px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            border-radius: 5px;
+        }
+        
+        .abstract,
+        .details {
+            width: 100%;
+            padding: 5px 10px;
+            position: relative;
+            background: transparent;
+        }
+        
+        .task:hover .details {
+            background: #ffffff;
+        }
+        
+        .abstract {
+            -webkit-transition: .3s ease all;
+            transition: .3s ease all;
+        }
+        
+        .details {
+            max-height: 0;
+            padding: 0;
+            overflow: hidden;
+            visibility: hidden;
+            -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: .3s transform ease;
+            transition: .3s transform ease;
+        }
+        
+        .details:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+        }
+        
+        .task:hover .details {
+            max-height: none;
+            overflow: visible;
+            visibility: visible;
+            -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+        }
+        
+        .details__inner {
+            padding: 5px 10px;
+        }
+    </style>
 </head>
 
 <body class="_fondo1">
@@ -54,7 +138,6 @@
 
 
     <div>
-
         <!-- Navbar -->
         <nav class="navbar navbar-solid-transition ">
             <div class="nav-wrapper">
@@ -66,18 +149,10 @@
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                    <li><a href="index.html" class=" candara">Inicio</a></li>
-                    <li><a href="Crea.html" class="active candara">Crea</a></li>
-                    <li><a href="Industria4.0.html" class=" candara">Industria 4.0</a></li>
-                    <li><a href="Servicios.html" class="  candara">Servicios</a></li>
-                    <li><a href="Store.html" class=" candara">Store</a></li>
-                    <li><a href="#" class="candara hide">Eventos</a></li>
-                    <li><a href="Contacto.html" class="candara">Contacto</a></li>
-                    <li><a href="#" class="noHover grey-text text-darken-1 " style="font-size:30px; font-weight: 100; margin: 0 1rem;">|</a></li>
                     <li><a href="http://accounts.xpertcad.com/" class="waves-effect waves-light btn orange" style="
-                padding-left: 24px;
-                padding-right: 24px; border-radius: 5px;  font-weight: 400; margin: 0 1rem; 
-            ">Iniciar sesión</a></li>
+                    padding-left: 24px;
+                    padding-right: 24px; border-radius: 5px;  font-weight: 400; margin: 0 1rem; 
+                ">Iniciar sesión</a></li>
                     <li>
                         <a href="#" data-activates="slide-out" class="button-collapse right show-on-large hide-on-med-and-down"><i class="material-icons black-text" style="font-style: 0px;">menu</i></a>
                     </li>
@@ -87,519 +162,26 @@
         </nav>
         <ul id="slide-out" class="side-nav">
             <li><a class="waves-effect waves-orange" href="index.html">Inicio</a></li>
+            <li><a class="waves-effect waves-orange" href="Aprende.html">Aprende</a></li>
             <li><a class="waves-effect waves-orange" href="Crea.html">Crea</a></li>
-            <li><a class="waves-effect waves-orange" href="Industria4.0.html">Industria 4.0</a></li>
+            <li><a class="waves-effect waves-orange" href="Administra.html">Administra</a></li>
             <li><a class="waves-effect waves-orange" href="Servicios.html">Servicios</a></li>
-            <li><a class="waves-effect waves-orange" href="Store.html">Store</a></li>
+            <li><a class="waves-effect waves-orange" href="Nostros.html">Nosotros</a></li>
             <li><a class="waves-effect waves-orange" href="Contacto.html">Contacto</a></li>
             <li><a class="waves-effect waves-orange" href="http://accounts.xpertcad.com/">Iniciar sesion</a></li>
         </ul>
 
-        <!-- Modal Docentes -->
-        <div id="docentes" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <img class="responsive-img" src="images/PortadaModal.jpg" style="width: 1920px; ">
-                <br>
-                <br>
-                <h4 class="pink-text text-darken-4" style="font-weight: 500; font-size: 28px;">Para docentes e Instituciones educativas:
-                </h4>
-                <p class="black-text">¿Quieres documentar tu materia (o materias) y compartirlas con tus alumnos de una forma dinámica, interactiva y profesional?
-                </p>
-                <p class="black-text">Regístrate en  Xpertcad Crea en su modalidad “Docente” o siendo parte de una institución con Alianza con Xpertcad, y comienza a crear contenidos que promuevan el aprendizaje en tus alumnos y a tí te agilicen la preparación de tus clases,
-                    elimina el desafío de preparar clases semestre tras semestre, documentando y actualizando tus cursos cuando tu lo decidas.
-                </p>
-                <p class="black-text">Dentro de Xpertcad crea, podrás asignar tareas, evaluarlas, medir el progreso individual y de tus grupos, y si requieres una interacción en vivo, podrás crear sesiones remotas con las aplicaciones comerciales como zoom, gotomeeting, google
-                    meet, teams o utilizando la herramienta de conferencias en vivo y streaming gratuita jitsi.org
-
-                </p>
-                <p class="black-text">Si tu institución educativa cuenta con alianza con Xpertcad, tendrás mayores herramientas interactivas disponibles, así como la posibilidad de crear cursos en conjunto con otros colaboradores, así como tener acceso a cursos adicionales
-                    preparados por o  asignados a tu institución.
-                </p>
-                <p class="black-text">Adicionalmente, como institución académica, en Xpertcad Crea, contarás con una plataforma integral que administrará tanto los cursos por materia, carrera o especialidad de la institución, creados por los docentes o responsables del desarrollo
-                    de contenidos en la institución, así como seguimiento y desempeño de grupos y alumnos,
-                </p>
-                <p class="black-text">Podrás revisar estadísticas de aprovechamiento en la plataforma y de una forma profesional tendrás implementado un sistema de aprendizaje virtual profesional.
-
-                </p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-            </div>
-        </div>
-
-        <!-- Modal Consultores -->
-        <div id="modal1" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <img class="responsive-img" src="images/PortadaModal.jpg" style="width: 1920px; ">
-                <br>
-                <br>
-                <h4 class="pink-text text-darken-4" style="font-weight: 500; font-size: 28px;">Para docentes e Instituciones educativas:
-                </h4>
-                <p class="black-text">¿Quieres documentar tu materia (o materias) y compartirlas con tus alumnos de una forma dinámica, interactiva y profesional?
-                </p>
-                <p class="black-text">Regístrate en  Xpertcad Crea en su modalidad “Docente” o siendo parte de una institución con Alianza con Xpertcad, y comienza a crear contenidos que promuevan el aprendizaje en tus alumnos y a tí te agilicen la preparación de tus clases,
-                    elimina el desafío de preparar clases semestre tras semestre, documentando y actualizando tus cursos cuando tu lo decidas.
-                </p>
-                <p class="black-text">Dentro de Xpertcad crea, podrás asignar tareas, evaluarlas, medir el progreso individual y de tus grupos, y si requieres una interacción en vivo, podrás crear sesiones remotas con las aplicaciones comerciales como zoom, gotomeeting, google
-                    meet, teams o utilizando la herramienta de conferencias en vivo y streaming gratuita jitsi.org
-
-                </p>
-                <p class="black-text">Si tu institución educativa cuenta con alianza con Xpertcad, tendrás mayores herramientas interactivas disponibles, así como la posibilidad de crear cursos en conjunto con otros colaboradores, así como tener acceso a cursos adicionales
-                    preparados por o  asignados a tu institución.
-                </p>
-                <p class="black-text">Adicionalmente, como institución académica, en Xpertcad Crea, contarás con una plataforma integral que administrará tanto los cursos por materia, carrera o especialidad de la institución, creados por los docentes o responsables del desarrollo
-                    de contenidos en la institución, así como seguimiento y desempeño de grupos y alumnos,
-                </p>
-                <p class="black-text">Podrás revisar estadísticas de aprovechamiento en la plataforma y de una forma profesional tendrás implementado un sistema de aprendizaje virtual profesional.
-
-                </p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-        </div>
 
         <div class="section white full-height _fondo1">
-            <br>
-            <div class="container">
-                <img class="responsive-img" src="images/Home/XCAD-Crea-04.svg" width="600" style="display: block;
-                margin-left: auto;
-                margin-right: auto;">
-                <p class="black-text" style="font-weight: 500;">Propósito
-                </p>
-                <h4 class="left-align h4" style="font-weight: 400; font-size: 30px;">
-                    Crea los contenidos, difunde los conocimientos, contribuye en la formación de los profesionistas mejor preparados y capaces de afrontar los nuevos retos por venir.
-                </h4>
-                <h4 class="center-align" style="font-weight: 400; font-size: 30px;">
-                    Deja tú huella en la formación.
-                </h4>
-
-            </div>
-
-
-            <div id="wrapper">
-                <div class="row">
-
-                    <div class="col s12 m4 l2 xl2 center-align crea creaX" style="padding-top: 5%;">
-                        <a href="" class="videox"></a>
-                        <div id="btn1" class="btn-flat candara box-doc dropdown-button texth4P " data-activates="dropdown1">
-                            <h3 class="custom-underline black-text pointer">Docentes</h3>
-                        </div>
-                        </h4>
-                        <ul id="dropdown1" class="dropdown-content">
-                            <p class="black-text margin-text"> Para docentes interesados en desarrollar cursos profesionales para su comunidad de alumnos
-                            </p>
-                            <a href="#docentes" class="waves-effect waves-teal btn-flat grey-text text-darken-5 modal-trigger" style="border:1px solid orange;">Saber mas...</a>
-                            <br>
-                            <br>
-                        </ul>
-                    </div>
-
-                    <div class="col s12 m4 l2 xl2 center-align crea creaX" style="padding-top: 5%;">
-                        <a href="" class="videox"></a>
-                        <div id="btn1" class="btn-flat candara box-doc dropdown-button texth4P" data-activates="dropdown2">
-                            <h3 class="custom-underline black-text">Consultores</h3>
-                        </div>
-                        </h4>
-                        <ul id="dropdown2" class="dropdown-content">
-                            <p class="black-text margin-text"> Consultores, conferencistas e independientes que proveen cursos o conferencias y desean agregar valor a su audiencia
-                            </p>
-                            <a href="#docentes" class="waves-effect waves-teal btn-flat grey-text text-darken-5 modal-trigger" style="border:1px solid orange;">Saber mas...</a>
-                            <br>
-                            <br>
-                        </ul>
-                    </div>
-
-
-                    <div class="col s12 m4 l3 xl3 center-align crea creaX" style="padding-top: 5%;">
-                        <a href="" class="videox"></a>
-                        <div id="btn1" class="btn-flat candara box-doc dropdown-button texth4P" data-activates="dropdown3">
-                            <h3 class="custom-underline black-text">Empresas / Escuelas</h3>
-                        </div>
-                        </h4>
-                        <ul id="dropdown3" class="dropdown-content">
-                            <p class="black-text margin-text">Empresas o Instituciones educativas con iniciativas formales en implementar un sistema integral de aprendizaje virtual
-                            </p>
-                            <a href="#docentes" class="waves-effect waves-teal btn-flat grey-text text-darken-5 modal-trigger" style="border:1px solid orange;">Saber mas...</a>
-                            <br>
-                            <br>
-                        </ul>
-                    </div>
-
-                    <div class="col s12 m4 l3 xl3 center-align crea creaX" style="padding-top: 5%;">
-                        <a href="" class="videox"></a>
-                        <div id="btn1" class="btn-flat candara box-doc dropdown-button texth4P" data-activates="dropdown4">
-                            <h3 class=" custom-underline black-text text-rep">Alumnos / Profesionistas</h3>
-                        </div>
-                        </h4>
-                        <ul id="dropdown4" class="dropdown-content">
-                            <p class="black-text margin-text">Alumnos de instituciones educativas y colaboradores de Empresas con Alianza con Xpertcad, o profesionistas independientes que adquieren cursos en Xpertcad Store
-                            </p>
-                            <a href="#docentes" class="waves-effect waves-teal btn-flat grey-text text-darken-5 modal-trigger" style="border:1px solid orange;">Saber mas...</a>
-                            <br>
-                            <br>
-                        </ul>
-                    </div>
-
-                    <div class="col s12 m4 l2 xl2 center-align crea creaX" style="padding-top: 5%;">
-                        <a href="" class="videox"></a>
-                        <div id="btn1" class="btn-flat candara box-doc dropdown-button texth4P" data-activates="dropdown5">
-                            <h3 class="custom-underline black-text">Expertos</h3>
-                        </div>
-                        </h4>
-                        <ul id="dropdown5" class="dropdown-content">
-                            <p class="black-text margin-text">Expertos en temas tecnológico industriales que desean crear cursos en linea y comercializarlos en Xpertcad
-                            </p>
-                            <a href="#docentes" class="waves-effect waves-teal btn-flat grey-text text-darken-5 modal-trigger" style="border:1px solid orange;">Saber mas...</a>
-                            <br>
-                            <br>
-                        </ul>
-                    </div>
-
-                    <div style="padding-top: 13%;"></div>
-
-
-
-
-                </div>
-            </div>
-            <div class="container">
-                <h4 class="center-align" style="font-weight: 400; font-size: 30px;">
-                    La plataforma que ofrece diversas soluciones centradas en crear, desarrollar e impulsar el conocimiento, como la mejor herramienta para poder generar un cambio positivo en nuestro entorno.
-                </h4>
-            </div>
-
-        </div>
-
-
-        <div class="section black  _fondo1 center-element">
-            <div class="background">
-                <img src="images/Crea/Person.jpg" alt="">
-            </div>
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col s5 push-s7"><span class="flow-text"></span></div>
-                    <div class="col s7 pull-s5"><span class="flow-text">Porque sabemos que instruir y desarrollar cursos no es una labor sencilla, Xpertcad<sup>&#174;</sup> Crea, pone a tu alcance una plataforma diseñada para la creación de cursos de forma ágil y amigable, que mezcla variedad de herramientas para documentar, compartir y administrar contenidos de manera profesional y atractiva.
-                    </span></div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="section white  _fondo1 center-element2">
-            <div class="container ">
-                <p class="black-text p-1">
-                    <blockquote class="black-text left-align">Nuestra misión</blockquote>
-                </p>
-                <h4 class="h4-1 center-align">CON XPERTCAD CREA, DESARROLLA FÁCIL Y RÁPIDAMENTE CONTENIDOS PROFESIONALES Y ATRACTIVOS PARA TU COMUNIDAD DE USUARIOS, ESTUDIANTES O COLABORADORES
-                </h4>
-            </div>
-        </div>
-
-        <div class="section  white hide-on-small-only	tabs-v">
-            <div class="row">
-                <div class=" col s12 m2 l2 xl2 " style="background-color: #e0e0e0 ;">
-
-                    <div class=" tabs-vertical ">
-                        <div class="col s12 center-element">
-                            <ul class="tabs " style="background-color: #e0e0e0;">
-                                <li class="tab " style="text-align: left;">
-                                    <a href="#primero ">
-                                        <h5 style="font-size: 20px;" class="active  ">
-                                            <blockquote class="black-text left-align">Crea</blockquote>
-                                        </h5>
-                                    </a>
-                                </li>
-                                <br>
-                                <br><br>
-                                <li class="tab " style="text-align: left; ">
-                                    <a href="#segundo ">
-                                        <h5 style="font-size: 20px;">Aprende</h5>
-                                    </a>
-                                </li>
-                                <br>
-                                <br><br>
-                                <li class="tab " style="text-align: left; ">
-                                    <a href="#tercero ">
-                                        <h5 style="font-size: 20px; ">Administra</h5>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m10 l10 xl0 " style="background-color: #e0e0e0;padding-left: 0px;padding-right: 0px; ">
-                    <div class="tabs-vertical">
-                        <div class="col s12" style="
-                        padding-left: 0px;
-                        padding-right: 0px;
-                    ">
-                            <div class="row" id="primero">
-                                <div class="col 12 m7 l7 xl7" style="height: 100vh;">
-                                    <div class="tab-content active ">
-                                        <img class=" responsive-img " src="images/Crea/Crea.jpg">
-                                    </div>
-                                </div>
-                                <div class="col 12 m5 l5 xl5">
-                                    <div class="container" style="margin-top: 15%;">
-                                        <p class="black-text p-1">Desarrolla contenidos profesionales!
-                                        </p>
-                                        <h4 class="left-align h4-1">CREA
-
-                                        </h4>
-
-                                        <p class="black-text p-1">En XpertCAD Crea, en su sección Crea, podrás desarrollar diversos cursos o contenidos, ya sea que pertenezcas a una institución educativa, empresa, seas consultor o experto que quiere compartir su conocimiento,
-                                            aquí encontrarás todas las herramientas para desarrollar contenidos con una gran presentación, y con herramientas muy interactivas para tus usuarios.
-
-                                        </p>
-                                        <p class="black-text p-1">Adicionalmente podrás evaluar el desempeño o avance de tus usuarios a través de tareas, quiz, o exámenes de evaluación.
-
-
-                                        </p>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row" id="segundo">
-                                <div class="col 12 m7 l7 xl7" style="height: 100vh;">
-                                    <div class="tab-content">
-                                        <img class="responsive-img " src="images/Crea/Aprende.jpg">
-
-                                    </div>
-                                </div>
-                                <div class="col 12 m5 l5 xl5">
-                                    <div class="container" style="margin-top: 15%;">
-                                        <p class="black-text p-1">Aprovecha los diversos cursos disponibles!
-                                        </p>
-                                        <h4 class="left-align h4-1">APRENDE
-
-                                        </h4>
-
-                                        <p class="black-text p-1">En XpertCAD Crea, en su sección aprende, encontrarás la lista de todos los cursos disponibles para tu formación y especialización.
-
-                                        </p>
-                                        <p class="black-text p-1">Si perteneces a una empresa o una institución educativa, aquí encontrarás los cursos que te asignen
-                                        </p>
-                                        <p class="black-text p-1">Si estas por tu cuenta, aquí encontrarás todos los cursos que has adquirido en Xpertcad Store
-
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row" id="tercero">
-                                <div class="col 12 m7 l7 xl7" style="height: 100vh;">
-                                    <div class="tab-content">
-                                        <img class="responsive-img " src="images/Crea/Administra.jpg">
-
-                                    </div>
-                                </div>
-                                <div class="col 12 m5 l5 xl5">
-                                    <div class="container" style="margin-top: 15%;">
-                                        <p class="black-text p-1">Conoce el desempeño de tus usuarios
-                                        </p>
-                                        <h4 class="left-align h4-1">ADMINISTRA
-                                        </h4>
-
-                                        <p class="black-text p-1">En XpertCAD Crea, en su sección Administra, encontrarás herramientas para administrar los cursos, sus usuarios y el desempeño grupal o individual de todos los participantes.
-
-                                        </p>
-                                        <p class="black-text p-1">Adicionalmente, si perteneces a una empresa, podrás controlar privilegios sobre quien puede crear y editar cursos, quien puede compartir, así como otros parámetros que te permitan personalizar la plataforma a tu
-                                            estilo y necesidades.
-
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="section header hide-on-med-and-down" style="height: 90vh; padding-bottom: 0px;">
-            <img class="background responsive-img" src="images/Crea/carou.jpg" alt=" ">
-            <div class=" row center-element " style="transform: translateY(-160px);">
-
-
-                <div class="col s12 m3 3 ">
-                </div>
-                <div class="col s12 m6 l6 ">
-                    <h4 class="center-align h4-1 white-text">4 sencillos pasos
-
-
-                    </h4>
-
-                    <p class="black-text p-1 center-align white-text ">
-                        Crea, Comparte y administra fácilmente tus conocimientos y experiencia con quien tú elijas .
-                    </p>
-
-                    <div class=" center  responsive-img " style=" margin: auto; ">
-                        <div class="carousel carousel-slider ">
-                            <a class="carousel-item " href="#one! "><img src="images/Crea/paso1.svg"></a>
-                            <a class="carousel-item " href="#two! "><img src="images/Crea/paso2.svg"></a>
-                            <a class="carousel-item " href="#three! "><img src="images/Crea/paso3.svg"></a>
-                            <a class="carousel-item " href="#four! "><img src="images/Crea/paso4.svg"></a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col s12 m3 l3 ">
-                </div>
-
-
-            </div>
-        </div>
-        <div class="section  full-height _fondo1" style="height: 100vh; padding-top: 0px; padding-bottom: 0px;">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col s12 center">
-                        <img class="responsive-img" src="images/Crea/comunidad-docentes.jpg" style="transform: translateX(100px);">
-                        <div class="col s6">
-                            <div class="card-panel grey lighten-4" style="transform: translateX(50px) translateY(-370px);">
-                                <p class="left-align black-text p-1">
-                                    <blockquote class="black-text left-align">Beneficios</blockquote>
-                                </p>
-                                <br>
-                                <h4 class="left-align h4-1 black-text">COMUNIDAD DOCENTES</h4>
-                                <br>
-                                <p class="left-align black-text p-1">En Xpertcad Comparte, si perteneces al sector académico o educacional, y te apasiona el aprendizaje, entonces sé parte de la Comunidad de Docentes, comparte ideas, proyectos, consejos, propuestas, planes etc y cualquier
-                                    herramienta o material que pueda ser de apoyo para otros colaboradores como tú. También podrás colaborar con las iniciativas compartidas por otros! No lo dudes más, comienza a compartir e interactuar!!
-                                </p>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section  full-height _fondo1" style="height: 100vh; padding-top: 0px; padding-bottom: opx;">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 ">
-                        <video class="responsive-video" autoplay muted="muted" preload="auto" loop="loop" width="1120">
-                            <source src="Videos/crea-multimedia.mp4" type="video/mp4">
-                          </video>
-                        <div class="col s6">
-                            <div class="card-panel grey lighten-4" style="transform: translateX(700px) translateY(-370px);">
-                                <p class="left-align black-text p-1">
-                                    <blockquote class="black-text left-align">Beneficios</blockquote>
-                                </p>
-                                <br>
-                                <h4 class="left-align h4-1 black-text">CURSOS / LABORATORIOS RA-RV
-                                </h4>
-                                <br>
-                                <p class="left-align black-text p-1">
-                                    Con Xpertcad – EON puedes crear cursos completos en minutos utilizando librerías de mas 800,000 modelos 3D con explicaciones que ayudan a los estudiantes a comprender el poder de la enseñanza virtual. Con Xpertcad - EON no requieres equipos RA/RV, desde
-                                    un Smartphone, Tablet, PC e internet, puedes crear y tomar cursos en RA / RV
-                                </p>
-                                <a href="https://xpertcad.com/Contacto.html" class="waves-effect waves-light btn orange right" style="font-weight: 500; ">Contactar
-                                </a>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section   _fondo1">
-            <div class="container">
-                <h4 class="h4-1 center-align  h4-1 black-text">Lo que distingue a Xpertcad <b class="red-text text-darken-4">|</b> Crea
-                </h4>
-                <br>
-                <br>
-                <br>
-
-                <div class="row" style="height: 50vh;">
-                    <div class="col s12 m12 l2 xl2 btn-flat dropdown-button" data-activates="facil">
-                        <div class="center">
-                            <img class="responsive-img" src="images/Crea/facil.svg">
-                        </div>
-                        <h4 class="h4-1 center-align  h4-1 black-text" style="margin-bottom: 0px;">Fáci
-                        </h4>
-                        <p class="black-text center" style="margin-top: 5px;">Cursos en minutos</p>
-
-                        <ul id="facil" class="dropdown-content" style="transform: translateY(180px); ">
-                            <p class="black-text margin-text center">La forma de crear cursos y contenidos más fácil, menos estresando y más versátil del mercado. Reduce hasta el 70% de creación de un curso y un 50% menos recursos vs plataformas tradicionales</p>
-                        </ul>
-                    </div>
-                    <div class="col s12 m12 l3 xl3 btn-flat dropdown-button" data-activates="Integral">
-                        <div class="center">
-                            <img class="responsive-img" src="images/Crea/integral.svg">
-                        </div>
-                        <h4 class="h4-1 center-align  h4-1 black-text" style="margin-bottom: 0px;">Integral
-                        </h4>
-                        <p class="black-text center" style="margin-top: 5px;">Todo en uno</p>
-                        <ul id="Integral" class="dropdown-content" style="transform: translateY(180px) ">
-                            <p class="black-text margin-text center">Crear, Compartir, Medir desempeño y avances, Administrar usuarios y cursos, más herramientas innovadoras e interactivas para apoyar a profesionales de la enseñanza
-                            </p>
-                        </ul>
-                    </div>
-                    <div class="col s12 m12 l2 xl2 btn-flat dropdown-button" data-activates="Mixta">
-                        <div class="center">
-                            <img class="responsive-img" src="images/Crea/mixta.svg">
-                        </div>
-                        <h4 class="h4-1 center-align  h4-1 black-text" style="margin-bottom: 0px;">Mixta
-                        </h4>
-                        <p class="black-text center" style="margin-top: 5px;">En vivo o en línea </p>
-                        <ul id="Mixta" class="dropdown-content" style="transform: translateY(180px); ">
-                            <p class="black-text margin-text center">Determina como quieres compartir tu conocimiento, ya sea como talleres, conferencias o clases en vivo telepresenciales, o simplemente documenta tu conocimiento y déjalo disponible en línea 24 x 7 los 365 días del año.
-                            </p>
-                        </ul>
-                    </div>
-                    <div class="col s12 m12 l3 xl3 btn-flat dropdown-button" data-activates="Comunidad">
-                        <div class="center">
-                            <img class="responsive-img" src="images/Crea/comunidad.svg">
-                        </div>
-                        <h4 class="h4-1 center-align  h4-1 black-text" style="margin-bottom: 0px;">Comunidad
-
-                        </h4>
-                        <p class="black-text center" style="margin-top: 5px;">Aprende de Colegas
-                        </p>
-                        <ul id="Comunidad" class="dropdown-content" style="transform: translateY(180px); ">
-                            <p class="black-text margin-text center">Las comunidades especificas de usuarios en xpertcad, te ayudan a escuchar y compartir retos, dudas, iniciativas entre colegas con tu mismo enfoque y responsabilidad
-                            </p>
-                        </ul>
-                    </div>
-                    <div class=" col s12 m12 l2 xl2 btn-flat dropdown-button" data-activates="Innovadora">
-                        <div class="center">
-                            <img class="responsive-img" src="images/Crea/innovadora.svg">
-                        </div>
-                        <h4 class="h4-1 center-align  h4-1 black-text" style="margin-bottom: 0px;">Innovadora
-
-                        </h4>
-                        <p class="black-text center" style="margin-top: 5px;">Tecnologías Actuales
-                        </p>
-                        <ul id="Innovadora" class="dropdown-content" style="transform: translateY(180px); ">
-                            <p class="black-text margin-text center">Con Xpertcad Crea tendrás una plataforma que constantemente te ofrecerá herramientas basadas en Inteligencia Artificial, Realida Aumentada y otras tecnologías de vanguardia que te ayuden en el reto de la formación y el aprendizaje.
-                            </p>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section white full-height _fondo1" style="
-        padding-bottom: 0px;
-padding-top: 0px;">
             <div class="container">
                 <table class="responsive-table">
                     <thead>
-                        <tr class="orange hide-on-small-only">
+                        <tr class="orange">
                             <th class="width-table"> &nbsp</th>
-                            <th class="width-table-text"> &nbsp </th>
+                            <th class="width-table-text"> &nbsp &nbsp &nbsp &nbsp</th>
                             <th class="width-table-text"> &nbsp</th>
-                            <th class="width-table-text white-text center"> Planes</th>
+                            <th class="width-table-text"> &nbsp</th>
+                            <th class="width-table-text white-text"> Planes</th>
                             <th class="width-table-text"> &nbsp</th>
                             <th class="width-table-text"> &nbsp</th>
                             <th class="width-table-text"> &nbsp</th>
@@ -607,6 +189,7 @@ padding-top: 0px;">
 
                         </tr>
                         <tr>
+                            <th> &nbsp</th>
                             <th> &nbsp</th>
                             <th> Para usuarios</th>
                             <th> Prueba la plataforma</th>
@@ -618,7 +201,8 @@ padding-top: 0px;">
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="hide-on-small-only ">
+                        <tr>
+                            <td class="td-text-m">&nbsp</td>
                             <td class="td-text-m">&nbsp</td>
                             <td class="table-text ">Alumnos de instituciones educativas y colaboradores de Empresas con Alianza con Xpertcad, o profesionistas independientes que adquieren cursos en Xpertcad Store</td>
                             <td class="table-text ">Usuarios que desean conocer y evaluar la plataforma, su funcionalidad y alcance antes de tomar una decisión</td>
@@ -627,15 +211,8 @@ padding-top: 0px;">
                             <td class="table-text ">Expertos en temas tecnológico industriales que desean crear cursos en linea y comercializarlos en Xpertcad</td>
                             <td class="table-text ">Empresas o Instituciones educativas con iniciativas definidas en implementar un sistema de aprendizaje virtual formal</td>
                         </tr>
-                        <tr class="white">
-                            <td class="td-text-m center">Alcances en general</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                        </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m ">Alcances en general</td>
                             <td class="td-all center-align">Costo</td>
                             <td class="td-all center-align">Gratuito</td>
                             <td class="td-all center-align">Gratuito</td>
@@ -645,6 +222,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">Acorde a plan</td>
                         </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m ">&nbsp</td>
                             <td class="td-all ">Duración de acceso a la plataforma</td>
                             <td class="td-all center-align">Acorde a Alianza</td>
                             <td class="td-all center-align">60 dias</td>
@@ -654,7 +232,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">Acorde a plan</td>
                         </tr>
                         <tr class="grey lighten-4">
-
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Desarrolladores de cursos</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">1</td>
@@ -664,7 +242,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">ilimitado</td>
                         </tr>
                         <tr class="grey lighten-4">
-
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Usuarios participantes de cursos</td>
                             <td class="td-all center-align">Acorde a Alianza</td>
                             <td class="td-all center-align">100</td>
@@ -674,7 +252,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">Acorde a plan</td>
                         </tr>
                         <tr class="grey lighten-4">
-
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Cantidad de creación de cursos</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">5</td>
@@ -684,6 +262,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">Ilimitado</td>
                         </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Almacenamiento disponible (GB)</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">5</td>
@@ -692,16 +271,8 @@ padding-top: 0px;">
                             <td class="td-all center-align">Ilimitado</td>
                             <td class="td-all center-align">Ilimitado</td>
                         </tr>
-                        <tr class="white">
-                            <td class="td-text-m height-th center">Crea</td>
-                            <td class="td-all ">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                        </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">Crea</td>
                             <td class="td-all ">Herramientas interactivas para creación de Cursos</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -711,6 +282,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Creación y asignación de tareas, actividades</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -720,6 +292,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Colaboración grupal para creacion de cursos</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -729,6 +302,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Creación / invitación a grupos de participantes</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -738,6 +312,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Creación de video conferencias</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -747,6 +322,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Activar foros de usuarios</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">ND</td>
@@ -756,6 +332,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Importa SCORM (dentro del contenido de un curso)</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -765,6 +342,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Exportar cursos (SCORM)</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">ND</td>
@@ -774,6 +352,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Publicar Curso gratuitos</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -783,6 +362,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Publicar cursos para comercializar</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">ND</td>
@@ -792,6 +372,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Insertar TEMAS de cursos Xpertcad Industria 4.0</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">ND</td>
@@ -801,6 +382,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Desarrollo lecciones RA / RV EON Platform</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">5 lecciones</td>
@@ -809,16 +391,8 @@ padding-top: 0px;">
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">Acorde a plan</td>
                         </tr>
-                        <tr class="white">
-                            <td class="td-text-m height-th center">Aprende</td>
-                            <td class="td-all ">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                        </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m height-th">Aprende</td>
                             <td class="td-all ">Listado de cursos gratuitos de la plataforma</td>
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
@@ -828,6 +402,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Listado de cursos de mi institución</td>
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                             <td class="td-all center-align">ND</td>
@@ -837,6 +412,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Lustado de cursos adquiridos en Xpertcad Store</td>
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
@@ -845,16 +421,8 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                         </tr>
-                        <tr class="white">
-                            <td class="td-text-m height-th center">Administra</td>
-                            <td class="td-all ">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                        </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">Administra</td>
                             <td class="td-all ">Administración de usuarios</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -864,6 +432,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Administración de cursos contenidos</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -873,6 +442,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Portal de administracion financiero</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">ND</td>
@@ -882,6 +452,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">ND</td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Activar chat interno</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -891,6 +462,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Exportación de listas (usuarios, avances,notas)</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -900,6 +472,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Administración de Notificaciones</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -909,6 +482,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Reportes de avance y desempeño</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -917,16 +491,8 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
-                        <tr class="white">
-                            <td class="td-text-m center">Comparte</td>
-                            <td class="td-all ">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                        </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m ">Comparte</td>
                             <td class="td-all ">Acceso a comunidad de docentes</td>
                             <td class="td-all center-align">Solo Docentes</td>
                             <td class="td-all center-align">Solo para Inst Educativas</td>
@@ -936,6 +502,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">Solo para Inst Educativas</td>
                         </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m ">&nbsp</td>
                             <td class="td-all ">Acceso a comunidad de estudiantes</td>
                             <td class="td-all center-align">Solo Alumnos</td>
                             <td class="td-all center-align">ND</td>
@@ -945,6 +512,7 @@ padding-top: 0px;">
                             <td class="td-all center-align">Solo Alumnos</td>
                         </tr>
                         <tr class="grey lighten-4">
+                            <td class="td-text-m ">&nbsp</td>
                             <td class="td-all ">Acceso a comunidad de profesionistas</td>
                             <td class="td-all center-align">Solo profesionistas</td>
                             <td class="td-all center-align">Solo profesionistas</td>
@@ -953,16 +521,8 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                             <td class="td-all center-align"><span class="material-icons  grey-text text-darken-1" style="font-size: 17px;">check_box</span></td>
                         </tr>
-                        <tr class="white">
-                            <td class="td-text-m height-th center">Servicio</td>
-                            <td class="td-all ">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                            <td class="td-all center-align">&nbsp</td>
-                        </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">Servicio</td>
                             <td class="td-all ">Soporte técnico via Foro Comunitario</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -972,6 +532,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Soporte técnico via email telefónico</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -981,6 +542,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Soporte técnico via chat</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">ND</td>
@@ -990,6 +552,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Soporte técnico por ejecutivo especializado</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -999,6 +562,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">FQS</td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
@@ -1008,6 +572,7 @@ padding-top: 0px;">
                             <td class="td-all center-align"><span class="material-icons  blue-text text-darken-3" style="font-size: 17px;">check_box</span></td>
                         </tr>
                         <tr class="blue lighten-4">
+                            <td class="td-text-m height-th">&nbsp</td>
                             <td class="td-all ">Apoyo en implementacion</td>
                             <td class="td-all center-align">ND</td>
                             <td class="td-all center-align">ND</td>
@@ -1022,67 +587,11 @@ padding-top: 0px;">
             </div>
 
         </div>
-        <div class="section white _fondo1 center-element2 ">
-            <div class="container ">
-                <p class="black-text p-1 "><span class="material-icons orange-text icon-p "> 
-                    horizontal_rule
-                    </span>Nuestra misión
-                </p>
-                <h4 class="h4-1 center-align h4-1 ">CON XPERTCAD CREA, DESARROLLA FÁCIL Y RÁPIDAMENTE CONTENIDOS PROFESIONALES Y ATRACTIVOS PARA TU COMUNIDAD DE USUARIOS, ESTUDIANTES O COLABORADORES
-                </h4>
-            </div>
-        </div>
 
 
-        <div class="section full-height amber darken-4 ">
-            <div class=" container center ">
-                <div class="row ">
-                    <div class="col s12 m5 ">
-                        <div class="left-align ">
-                            <img class="responsive-img " src="images/XpertcadBlanco.png " width="450 ">
-                        </div>
 
-                    </div>
-                    <div class="col s12 m1 ">
-                        <div class="left-align " style="transform: translatey(30px); ">
-                            <a href=" ">
-                                <img class="responsive-img " src="images/Facebook.png " width="50 ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m1 ">
-                        <div class="left-align " style="transform: translatey(30px); ">
-                            <a href=" ">
-                                <img class="responsive-img " src="images/Linkedin icon.png " width="50 ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m1 ">
-                        <div class="left-align " style="transform: translatey(30px); ">
-                            <a href=" ">
-                                <img class="responsive-img " src="images/instagram.png " width="50 ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m1 ">
-                        <div class="left-align " style="transform: translatey(30px); ">
-                            <a href=" ">
-                                <img class="responsive-img " src="images/Twitter.png " width="50 ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m1 ">
-                        <div class="left-align " style="transform: translatey(30px); ">
-                            <a href=" ">
-                                <img class="responsive-img " src="images/YOU TUBE.png " width="50 ">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <footer class="page-footer orange darken-4 ">
+        <footer class=" page-footer orange darken-4 ">
             <div class="container ">
                 <div class="row ">
                     <div class="col s6 m2 ">
@@ -1157,8 +666,15 @@ padding-top: 0px;">
             </div>
         </footer>
 
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-
+        <!-- Scripts -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js "></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js "></script>
+        <script>
+            $(document).ready(function() {
+                $('#myTable').DataTable();
+            });
+        </script>
         <script src="js/materialize.js "></script>
 
         <!-- External libraries -->
@@ -1168,34 +684,249 @@ padding-top: 0px;">
         <script src="js/TweenMax.min.js "></script>
         <script src="js/ScrollMagic.min.js "></script>
         <script src="js/animation.gsap.min.js "></script>
-        <!-- Resources -->
-        <script src="https://cdn.amcharts.com/lib/4/core.js "></script>
-        <script src="https://cdn.amcharts.com/lib/4/charts.js "></script>
-        <script src="https://cdn.amcharts.com/lib/4/plugins/forceDirected.js "></script>
-        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js "></script>
+
         <!-- Initialization script -->
-        <script src="js/startup.js "></script>
-        <script src="js/init.js "></script>
-        <script src="js/Puntero.js "></script>
-        <!-- partial -->
-        <script src="js/color-body.js "></script>
-        <script src="js/video.js "></script>
+        <script src="js/startup.min.js "></script>
+        <script src="js/init.min.js "></script>
         <script>
-            // image array
-            var image = ["crea ", "industria ", "store ", "servicios ", "orange ", "black "];
+            // create funMouse function 
+            function funMouse() {
 
-            $(".list-group li ").hover(function() {
-                var value = $(this).index();
-                hoverContent(value);
-            });
 
-            function hoverContent(value) {
-                $("#list-content li ").removeClass('show');
-                $("#list-content li:nth-child( " + value + ") ").addClass("show ");
-                $("#bg ").removeClass();
-                $("#bg ").addClass(image[value]);
+
+
+                // get canvas
+                const canvas = document.querySelector(".js--canvas ");
+                const canvasContext = canvas.getContext("2d ");
+
+
+
+
+                // set canvas size
+                let canvasWidth = (canvas.width = window.innerWidth);
+                let canvasHeight = (canvas.height = window.innerHeight);
+
+
+
+
+                // get mouse position
+                let mouseX = canvasWidth / 2;
+                let mouseY = canvasHeight / 2;
+
+
+
+
+                // create circles
+                let circle = {
+                    radius: 12,
+                    lastX: mouseX,
+                    lastY: mouseY
+                };
+
+                let miniCircle = {
+                    radius: 3,
+                    lastX: mouseX,
+                    lastY: mouseY
+                };
+
+
+
+
+                // get all data-hover elements
+                // obvi this is better one a web page with more than one anchor tag
+                const elements = [...document.querySelectorAll("a ")];
+
+
+
+
+                // resize canvas function
+                var resizeCanvas = function resizeCanvas() {
+                    canvasWidth = canvas.width = window.innerWidth;
+                    canvasHeight = canvas.height = window.innerHeight;
+                };
+
+
+
+
+                // create var holding mouseRender function
+                var mouseRender = function mouseRender() {
+
+
+                    // clear canvas so no colours or styles overlap
+                    canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+
+
+                    // get circles x-coordinate and y-coordinate based on mouse coordinates
+                    // the small circle has a slight delay due to the last parms passed
+                    circle.lastX = lerp(circle.lastX, mouseX, 0.5);
+                    circle.lastY = lerp(circle.lastY, mouseY, 0.5);
+
+                    miniCircle.lastX = lerp(miniCircle.lastX, mouseX, 0.1);
+                    miniCircle.lastY = lerp(miniCircle.lastY, mouseY, 0.1);
+
+
+                    // create first circle
+                    canvasContext.beginPath();
+                    canvasContext.arc(
+                        circle.lastX,
+                        circle.lastY,
+                        circle.radius,
+                        0,
+                        Math.PI * 2,
+                        false
+                    );
+                    canvasContext.lineWidth = 3;
+                    canvasContext.strokeStyle = "orange ";
+                    canvasContext.stroke();
+                    canvasContext.closePath();
+
+
+                    // create small/second circle
+                    canvasContext.beginPath();
+                    canvasContext.arc(
+                        miniCircle.lastX,
+                        miniCircle.lastY,
+                        miniCircle.radius,
+                        0,
+                        Math.PI * 2,
+                        false
+                    );
+                    canvasContext.fillStyle = "orange ";
+                    canvasContext.fill();
+                    canvasContext.closePath();
+
+
+                    // render/draw mouse by calling requestAnimationFrame() and passing itself through
+                    requestAnimationFrame(mouseRender);
+                };
+
+
+
+
+                // mouseInit function
+                var mouseInit = function mouseInit() {
+
+
+                    // render/draw mouse by calling requestAnimationFrame() and passing mouseRender
+                    requestAnimationFrame(mouseRender);
+
+
+                    // on mouse move update coordinates
+                    window.addEventListener("mousemove ", function(e) {
+                        mouseX = e.clientX;
+                        mouseY = e.clientY;
+                    });
+
+
+                    // update canvas size on window resize
+                    window.addEventListener("resize ", resizeCanvas, false);
+
+
+                    // style mouse on hover function
+                    function on() {
+                        canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+                        canvasContext.beginPath();
+                        canvasContext.arc(
+                            circle.lastX,
+                            circle.lastY,
+                            circle.radius,
+                            0,
+                            Math.PI * 2,
+                            false
+                        );
+                        canvasContext.lineWidth = 5;
+                        canvasContext.strokeStyle = "#2196f3 ";
+                        canvasContext.stroke();
+                        canvasContext.closePath();
+
+                        requestAnimationFrame(on);
+                    }
+
+
+                    // style mouse off hover
+                    // should be the same are prior to any hover
+                    // i noticed if i don't do this then the on styles will stay even after hover
+                    function off() {
+                        canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+                        canvasContext.beginPath();
+                        canvasContext.arc(
+                            circle.lastX,
+                            circle.lastY,
+                            circle.radius,
+                            0,
+                            Math.PI * 2,
+                            false
+                        );
+                        canvasContext.lineWidth = 2;
+                        canvasContext.strokeStyle = "orange ";
+                        canvasContext.stroke();
+                        canvasContext.closePath();
+
+                        canvasContext.beginPath();
+                        canvasContext.arc(
+                            miniCircle.lastX,
+                            miniCircle.lastY,
+                            miniCircle.radius,
+                            0,
+                            Math.PI * 2,
+                            false
+                        );
+                        canvasContext.fillStyle = "orange ";
+                        canvasContext.fill();
+                        canvasContext.closePath();
+
+                        requestAnimationFrame(off);
+                    }
+
+
+                    // using TweenMax.min.js by GSAP addin easing for radius for circle
+                    // https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js
+                    let tween = TweenMax.to(circle, 1.25, {
+                        radius: circle.radius * 3.5,
+                        ease: Power1.easeInOut,
+                        paused: true
+                    });
+
+
+                    // for each hover element add mouseenter and mouseleave actions
+                    elements.forEach((el) => {
+                        el.addEventListener("mouseenter ", () => {
+                            on();
+                        }, false);
+                        el.addEventListener("mouseleave ", () => {
+                            off();
+                        }, false);
+                        el.addEventListener("mouseenter ", () => {
+                            tween.play();
+                        }, false);
+                        el.addEventListener("mouseleave ", () => {
+                            tween.reverse();
+                        }, false);
+                    });
+                };
+
+
+                // tbh this is from ReGGae's pen that is added in the html comment at the top
+                // from my understanding it does a bunch of math to figure out a smooth position update, including the delay on the mini circle
+                // my [very poor] translation of this math:
+                // shape.lastX = lerp(shape.lastX, mouseX, delay);
+                // above === below
+                // return (1 - delay) * shape.lastX + delay * mouseX;
+                var lerp = function lerp(a, b, n) {
+                    return (1 - n) * a + n * b;
+                };
+
+
+                //init the mouse function
+                mouseInit();
             }
+
+
+            // run fun mouse to have this cursor
+            funMouse();
         </script>
+
+
 
 </body>
 

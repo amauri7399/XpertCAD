@@ -1,0 +1,643 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>XpertCAD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://accounts.xpertcad.com/assets/images/fav.png" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="css/HomeXpertCAD.css">
+    <link rel="stylesheet" href="css/mask.css">
+    <link rel="stylesheet" href="css/color-body.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="css/video.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171523709-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171523709-1');
+    </script>
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .sample {
+            font-family: 'ModernLove-RegularSlanted';
+        }
+        
+        .candara {
+            font-family: 'Candara';
+        }
+    </style>
+    <style>
+        .task {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            -webkit-perspective: 800px;
+            perspective: 800px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            border-radius: 5px;
+        }
+        
+        .abstract,
+        .details {
+            width: 100%;
+            padding: 5px 10px;
+            position: relative;
+            background: transparent;
+        }
+        
+        .task:hover .details {
+            background: #ffffff;
+        }
+        
+        .abstract {
+            -webkit-transition: .3s ease all;
+            transition: .3s ease all;
+        }
+        
+        .details {
+            max-height: 0;
+            padding: 0;
+            overflow: hidden;
+            visibility: hidden;
+            -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: .3s transform ease;
+            transition: .3s transform ease;
+        }
+        
+        .details:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+        }
+        
+        .task:hover .details {
+            max-height: none;
+            overflow: visible;
+            visibility: visible;
+            -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+        }
+        
+        .details__inner {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body class="_fondo1">
+    <canvas class="js--canvas"></canvas>
+
+    <a class="waves-effect waves-light btn amber darken-3 SideNavBott btnfixed  hide" id="SideNavBott" style=" font-weight: 400;
+    "><i class="material-icons right  ">exposure_plus_1
+</i>Noticias
+     </a>
+
+    <div id="SideNavRight" class="SideNavRight grey lighten-3 ">
+        <a href="javascript:void(0)" class=" SideNavBott grey-text text-darken-1 right" id="SideNavBott" style="transform: translateX(-20px);"><span class="material-icons">
+            close
+            </span></a>
+        <div style="margin: 10px;">
+            <img class="responsive-img  materialboxed" src="images/Home/Noticias.jpg">
+
+        </div>
+    </div>
+
+
+
+    <div id="contentmain">
+        <!-- Navbar -->
+        <nav class="navbar navbar-solid-transition ">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo"><img class="responsive-img hide-on-small-only" src="images/Xpertcad.png" width="190px " style="transform: translateY(10px);">
+                    </i>
+                </a>
+                <a href="#" class="brand-logo center-align hide-on-large-only hide-on-med-and-up"><img class="responsive-img" src="images/Xpertcad.png" width="180px " style="transform: translateY(5px) translateX(65px);">
+                    </i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Crea.html">Crea</a></li>
+                    <li><a href="">Industria 4.0</a></li>
+                    <li><a href="Servicios.html">Xpertcad Store</a></li>
+                    <li><a href="Nostros.html">Servicios</a></li>
+                    <li><a href="Contacto.html" class="hide">Contacto</a></li>
+                    <li><a href="http://accounts.xpertcad.com/" class="waves-effect waves-light btn orange" style="
+                    padding-left: 24px;
+                    padding-right: 24px; border-radius: 5px;  font-weight: 400; margin: 0 1rem; 
+                ">Iniciar sesión</a></li>
+                    <li>
+                        <a href="#" data-activates="slide-out" class="button-collapse right show-on-large hide-on-med-and-down"><i class="material-icons black-text" style="font-style: 0px;">menu</i></a>
+                    </li>
+                </ul>
+                <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons black-text" >menu</i></a>
+            </div>
+        </nav>
+        <ul id="slide-out" class="side-nav">
+            <li><a class="waves-effect waves-orange" href="index.html">Inicio</a></li>
+            <li><a class="waves-effect waves-orange" href="Aprende.html">Aprende</a></li>
+            <li><a class="waves-effect waves-orange" href="Crea.html">Crea</a></li>
+            <li><a class="waves-effect waves-orange" href="Administra.html">Administra</a></li>
+            <li><a class="waves-effect waves-orange" href="Servicios.html">Servicios</a></li>
+            <li><a class="waves-effect waves-orange" href="Nostros.html">Nosotros</a></li>
+            <li><a class="waves-effect waves-orange" href="Contacto.html">Contacto</a></li>
+            <li><a class="waves-effect waves-orange" href="http://accounts.xpertcad.com/">Iniciar sesion</a></li>
+        </ul>
+
+
+        <div class="section white full-height _fondo1" style=" height: 100vh;">
+            <br>
+            <div class="container">
+                <img class="responsive-img" src="images/Home/XCAD-Servicios-02.svg" width="600" style="display: block;
+                margin-left: auto;
+                margin-right: auto;">
+                <h4 class="center-align h4">
+                    Domina y especialízate en las tecnologías del futuro, aprende de la mano de expertos. Prepárate para el futuro, desarrolla tus conocimientos y haz que tu perfil destaque de los demás.
+                </h4>
+                <h4 class="center-align">
+                    Utiliza tu talento para transformar el mundo exponenciando tus capacidades con el conocimiento que la industria exige </h4>
+
+            </div>
+
+
+            <div id="wrapper">
+                <div class="row">
+
+                    <div class="col s12 m12 l3 xl3 center-align crea creaX" style="padding-top: 5%;">
+                        <a href="" class="videox"></a>
+                        <div id="btn1" class="btn-flat candara black-text  dropdown-button texth4P underline5 " data-activates="dropdown1">
+                            Desarrollo Cursos Especializados
+
+                        </div>
+                        <ul id="dropdown1" class="dropdown-content">
+                            <img class="responsive-img" src="images/Industria4.0/CAE_.png" width="600" style="display: block;
+                margin-left: auto;
+                margin-right: auto;">
+                        </ul>
+                    </div>
+                    <div class="col s12 m12 l3 xl3 center-align industria industriaX" style="padding-top: 5%;">
+                        <div id="btn2" class="btn-flat candara black-text  dropdown-button texth4P underline5" data-activates="dropdown2">Simuladores virtuales 2D y 3D
+
+
+                        </div>
+                        <ul id="dropdown2" class="dropdown-content">
+                            <img class="responsive-img" src="images/Industria4.0/CAE_.png" width="600" style="display: block;
+                            margin-left: auto;
+                            margin-right: auto;">
+                        </ul>
+                    </div>
+
+                    <div class="col s12 m12 l3 xl3 center-align xcadstore xcadstoreX" style="padding-top: 5%;">
+                        <div id="btn3" class="btn-flat candara black-text  dropdown-button texth4P underline5" data-activates="dropdown3">Experiencias en RX / RM / RA / RV
+
+
+                        </div>
+                        <ul id="dropdown3" class="dropdown-content">
+                            <img class="responsive-img" src="images/Industria4.0/CAE_.png" width="600" style="display: block;
+                            margin-left: auto;
+                            margin-right: auto;">
+                        </ul>
+                    </div>
+                    <div class="col s12 m12 l3 xl3 center-align servicios serviciosX" style="padding-top: 5%; padding-bottom: 5%;">
+                        <div id="btn4" class="btn-flat candara black-text  dropdown-button texth4P underline5" data-activates="dropdown4">Entrenamientos virtuales con equipo hápticos
+
+
+                        </div>
+                        <ul id="dropdown4" class="dropdown-content">
+                            <img class="responsive-img" src="images/Industria4.0/CAE_.png" width="600" style="display: block;
+                            margin-left: auto;
+                            margin-right: auto;">
+                        </ul>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="container">
+                <h4>
+                    La plataforma que ofrece diversas soluciones centradas en crear, desarrollar e impulsar el conocimiento, como la mejor herramienta para poder generar un cambio positivo en nuestro entorno.
+                </h4>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="section full-height amber darken-4">
+            <div class=" container center ">
+                <div class="row">
+                    <div class="col s12 m5">
+                        <div class="left-align">
+                            <img class="responsive-img  " src="images/XpertcadBlanco.png" width="450">
+                        </div>
+
+                    </div>
+                    <div class="col s12 m1">
+                        <div class="left-align" style="transform: translatey(30px);">
+                            <a href="">
+                                <img class="responsive-img  " src="images/Facebook.png" width="50">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m1">
+                        <div class="left-align" style="transform: translatey(30px);">
+                            <a href="">
+                                <img class="responsive-img  " src="images/Linkedin icon.png" width="50">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m1">
+                        <div class="left-align" style="transform: translatey(30px);">
+                            <a href="">
+                                <img class="responsive-img  " src="images/instagram.png" width="50">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m1">
+                        <div class="left-align" style="transform: translatey(30px);">
+                            <a href="">
+                                <img class="responsive-img  " src="images/Twitter.png" width="50">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m1">
+                        <div class="left-align" style="transform: translatey(30px);">
+                            <a href="">
+                                <img class="responsive-img  " src="images/YOU TUBE.png" width="50">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer orange darken-4">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col s6 m2">
+                        <h5 class="white-text">Plataforma crea</h5>
+                        <ul>
+                            <li><a href="" class="white-text">Crea</a></li>
+                            <li><a href="" class="white-text">Administra</a></li>
+                            <li><a href="" class="white-text">Aprende</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s6 m4">
+                        <h5 class="white-text">Servicios profesionales
+                        </h5>
+                        <ul>
+                            <li><a href="" class="white-text">Experiencias de formación especializadas
+                            </a></li>
+                            <li><a href="" class="white-text">Desarrollo de proyectos o experiencias en realidad aumentada y realidad virtual
+                            </a></li>
+                            <li><a href="" class="white-text">Simuladores de aprendizaje virtual 
+                            </a></li>
+                            <li><a href="" class="white-text">Desarrollo de experiencias de aprendizaje con conectividad IIoT
+    
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="col s6 m4">
+                        <h5 class="white-text">INDUSTRIA 4.0
+
+                        </h5>
+                        <ul>
+                            <li><a href="" class="white-text">EModelado 3D
+                            </a></li>
+                            <li><a href="" class="white-text">Simulación 
+                            </a></li>
+                            <li><a href="" class="white-text">Manufactura Aditiva 
+                            </a></li>
+                            <li><a href="" class="white-text">Manufactura sustractiva 
+                            </a></li>
+                            <li><a href="" class="white-text">Virtualización de procesos 
+
+                            </a></li>
+                            <li><a href="" class="white-text">Realidad Aumentada 
+
+                            </a></li>
+                            <li><a href="" class="white-text">Realidad Virtual 
+
+                            </a></li>
+                            <li><a href="" class="white-text">Internet Industrial de las Cosas 
+
+                            </a></li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col s6 m2">
+                        <h5 class="white-text">Contacto</h5>
+                        <ul>
+                            <li><a target="_blank " class="white-text" href="https://api.whatsapp.com/send?phone=521 442 114 5914&text=Hola!%20Quiero%20contactarme%20con%20ustedes! ">Whatsapp</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="footer-copyright">
+                <div class="container">
+
+
+                    Desarrollado por el equipo XpertCAD<sup>&#174; </sup>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js "></script>
+        <script src="js/materialize.min.js "></script>
+
+        <!-- External libraries -->
+        <script src="js/imagesloaded.pkgd.min.js "></script>
+        <script src="js/SideNavPush.js "></script>
+        <script src="js/masonry.pkgd.min.js "></script>
+        <script src="js/TweenMax.min.js "></script>
+        <script src="js/ScrollMagic.min.js "></script>
+        <script src="js/animation.gsap.min.js "></script>
+
+        <!-- Initialization script -->
+        <script src="js/startup.min.js "></script>
+        <script src="js/init.min.js "></script>
+        <script>
+            // create funMouse function 
+            function funMouse() {
+
+
+
+
+                // get canvas
+                const canvas = document.querySelector(".js--canvas");
+                const canvasContext = canvas.getContext("2d");
+
+
+
+
+                // set canvas size
+                let canvasWidth = (canvas.width = window.innerWidth);
+                let canvasHeight = (canvas.height = window.innerHeight);
+
+
+
+
+                // get mouse position
+                let mouseX = canvasWidth / 2;
+                let mouseY = canvasHeight / 2;
+
+
+
+
+                // create circles
+                let circle = {
+                    radius: 12,
+                    lastX: mouseX,
+                    lastY: mouseY
+                };
+
+                let miniCircle = {
+                    radius: 3,
+                    lastX: mouseX,
+                    lastY: mouseY
+                };
+
+
+
+
+                // get all data-hover elements
+                // obvi this is better one a web page with more than one anchor tag
+                const elements = [...document.querySelectorAll("a")];
+
+
+
+
+                // resize canvas function
+                var resizeCanvas = function resizeCanvas() {
+                    canvasWidth = canvas.width = window.innerWidth;
+                    canvasHeight = canvas.height = window.innerHeight;
+                };
+
+
+
+
+                // create var holding mouseRender function
+                var mouseRender = function mouseRender() {
+
+
+                    // clear canvas so no colours or styles overlap
+                    canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+
+
+                    // get circles x-coordinate and y-coordinate based on mouse coordinates
+                    // the small circle has a slight delay due to the last parms passed
+                    circle.lastX = lerp(circle.lastX, mouseX, 0.5);
+                    circle.lastY = lerp(circle.lastY, mouseY, 0.5);
+
+                    miniCircle.lastX = lerp(miniCircle.lastX, mouseX, 0.1);
+                    miniCircle.lastY = lerp(miniCircle.lastY, mouseY, 0.1);
+
+
+                    // create first circle
+                    canvasContext.beginPath();
+                    canvasContext.arc(
+                        circle.lastX,
+                        circle.lastY,
+                        circle.radius,
+                        0,
+                        Math.PI * 2,
+                        false
+                    );
+                    canvasContext.lineWidth = 3;
+                    canvasContext.strokeStyle = "orange";
+                    canvasContext.stroke();
+                    canvasContext.closePath();
+
+
+                    // create small/second circle
+                    canvasContext.beginPath();
+                    canvasContext.arc(
+                        miniCircle.lastX,
+                        miniCircle.lastY,
+                        miniCircle.radius,
+                        0,
+                        Math.PI * 2,
+                        false
+                    );
+                    canvasContext.fillStyle = "orange";
+                    canvasContext.fill();
+                    canvasContext.closePath();
+
+
+                    // render/draw mouse by calling requestAnimationFrame() and passing itself through
+                    requestAnimationFrame(mouseRender);
+                };
+
+
+
+
+                // mouseInit function
+                var mouseInit = function mouseInit() {
+
+
+                    // render/draw mouse by calling requestAnimationFrame() and passing mouseRender
+                    requestAnimationFrame(mouseRender);
+
+
+                    // on mouse move update coordinates
+                    window.addEventListener("mousemove", function(e) {
+                        mouseX = e.clientX;
+                        mouseY = e.clientY;
+                    });
+
+
+                    // update canvas size on window resize
+                    window.addEventListener("resize", resizeCanvas, false);
+
+
+                    // style mouse on hover function
+                    function on() {
+                        canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+                        canvasContext.beginPath();
+                        canvasContext.arc(
+                            circle.lastX,
+                            circle.lastY,
+                            circle.radius,
+                            0,
+                            Math.PI * 2,
+                            false
+                        );
+                        canvasContext.lineWidth = 5;
+                        canvasContext.strokeStyle = "#2196f3";
+                        canvasContext.stroke();
+                        canvasContext.closePath();
+
+                        requestAnimationFrame(on);
+                    }
+
+
+                    // style mouse off hover
+                    // should be the same are prior to any hover
+                    // i noticed if i don't do this then the on styles will stay even after hover
+                    function off() {
+                        canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+                        canvasContext.beginPath();
+                        canvasContext.arc(
+                            circle.lastX,
+                            circle.lastY,
+                            circle.radius,
+                            0,
+                            Math.PI * 2,
+                            false
+                        );
+                        canvasContext.lineWidth = 2;
+                        canvasContext.strokeStyle = "orange";
+                        canvasContext.stroke();
+                        canvasContext.closePath();
+
+                        canvasContext.beginPath();
+                        canvasContext.arc(
+                            miniCircle.lastX,
+                            miniCircle.lastY,
+                            miniCircle.radius,
+                            0,
+                            Math.PI * 2,
+                            false
+                        );
+                        canvasContext.fillStyle = "orange";
+                        canvasContext.fill();
+                        canvasContext.closePath();
+
+                        requestAnimationFrame(off);
+                    }
+
+
+                    // using TweenMax.min.js by GSAP addin easing for radius for circle
+                    // https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js
+                    let tween = TweenMax.to(circle, 1.25, {
+                        radius: circle.radius * 3.5,
+                        ease: Power1.easeInOut,
+                        paused: true
+                    });
+
+
+                    // for each hover element add mouseenter and mouseleave actions
+                    elements.forEach((el) => {
+                        el.addEventListener("mouseenter", () => {
+                            on();
+                        }, false);
+                        el.addEventListener("mouseleave", () => {
+                            off();
+                        }, false);
+                        el.addEventListener("mouseenter", () => {
+                            tween.play();
+                        }, false);
+                        el.addEventListener("mouseleave", () => {
+                            tween.reverse();
+                        }, false);
+                    });
+                };
+
+
+                // tbh this is from ReGGae's pen that is added in the html comment at the top
+                // from my understanding it does a bunch of math to figure out a smooth position update, including the delay on the mini circle
+                // my [very poor] translation of this math:
+                // shape.lastX = lerp(shape.lastX, mouseX, delay);
+                // above === below
+                // return (1 - delay) * shape.lastX + delay * mouseX;
+                var lerp = function lerp(a, b, n) {
+                    return (1 - n) * a + n * b;
+                };
+
+
+                //init the mouse function
+                mouseInit();
+            }
+
+
+            // run fun mouse to have this cursor
+            funMouse();
+        </script>
+
+
+
+</body>
+
+</html>

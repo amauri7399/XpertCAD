@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Contacto - XpertCAD</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/HomeXpertCAD.css">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+
+
+</head>
+<style>
+    .errorCaptha {
+        margin-top: 5px;
+        color: #ff6a00;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-solid-transition ">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img class="responsive-img hide-on-small-only" src="images/Xpertcad.png" width="190px " style="transform: translateY(10px);">
+                </i>
+            </a>
+            <a href="#" class="brand-logo center-align hide-on-large-only hide-on-med-and-up"><img class="responsive-img" src="images/Xpertcad.png" width="180px " style="transform: translateY(5px) translateX(65px);">
+                </i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Aprende.html">Aprende</a></li>
+                <li><a href="Crea.html">Crea</a></li>
+                <li><a href="Administra.html">Administra</a></li>
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Nostros.html">Nosotros</a></li>
+                <li><a href="Contacto.html" class="active hide">Contacto</a></li>
+                <li><a href="#" class="noHover grey-text text-darken-1 " style="font-size:30px; font-weight: 100; margin: 0 1rem;">|</a></li>
+                <li><a href="http://accounts.xpertcad.com/" class="waves-effect waves-light btn amber darken-3" style="
+                padding-left: 24px;
+                padding-right: 24px; border-radius: 5px;  font-weight: 400; margin: 0 1rem; 
+            ">Iniciar sesión</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons black-text">menu</i></a>
+        </div>
+    </nav>
+    <ul id="slide-out" class="side-nav">
+        <li><a class="waves-effect waves-orange" href="index.html">Inicio</a></li>
+        <li><a class="waves-effect waves-orange" href="Aprende.html">Aprende</a></li>
+        <li><a class="waves-effect waves-orange" href="Crea.html">Crea</a></li>
+        <li><a class="waves-effect waves-orange" href="Administra.html">Administra</a></li>
+        <li><a class="waves-effect waves-orange" href="Servicios.html">Servicios</a></li>
+        <li><a class="waves-effect waves-orange" href="Nostros.html">Nosotros</a></li>
+        <li><a class="waves-effect waves-orange" href="Contacto.html">Contacto</a></li>
+        <li><a class="waves-effect waves-orange" href="http://accounts.xpertcad.com/">Iniciar sesion</a></li>
+    </ul>
+
+
+    <div class="section white _fondo1" style="height: auto;">
+        <div class="container">
+
+            <div class="section valign-wrapper white _fondo1 hide-on-small-only" style="padding-top: 0px">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col s12 m12" style="margin: 0px;">
+                            <div class="container1" id="container1">
+                                <div class="form-container sign-up-container">
+
+                                    <form id="formVentas" class="col s12" style="padding-left: 30px; padding-right: 30px; padding-top: 0em;">
+                                        <div class="row">
+
+                                            <h4 class="h4 center-align" style="font-weight: 300;">Alianzas y ventas</h4>
+                                            <div class="input-field col s6">
+                                                <input placeholder="Nombre" name="name" id="first_name" type="text" class="validate" required aria-required="true">
+                                                <label></label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input placeholder="Apellidos" name="last_name" id="last_name" type="text" class="">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="Telefono (10 digitos)" name="phone" id="icon_telephone" type="tel" class="validate" required>
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="Correo electronico" name="email" id="email" type="email" class="validate" required aria-required="true">
+                                                <label></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="Mensaje" name="message" id="input_text" type="text" class="validate" required>
+                                                <label for="input_text"></label>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="type" id="type" value="ev" required>
+                                        <br>
+                                        <div class="waves-effect waves-light btn yellow darken-3 col s12 sendMail" val="formVentas">Enviar</div>
+                                        <div class="row">
+
+                                            <div class="col s12 m4 l2">
+                                            </div>
+                                            <div class="col s12 m4 l8">
+                                                <div class="input-field col s12">
+                                                    <div id="capVentas"></div>
+                                                    <div id="errorVentas" class="errorCaptha"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m4 l2">
+                                            </div>
+                                        </div>
+                                        <a target="_blank " href="https://api.whatsapp.com/send?phone=521 442 114 5914&text=Hola!%20Quiero%20contactarme%20con%20ustedes! ">
+                                            <h5 class="center-align">Escribenos por WhatssApp <img class="responsive-img" width="25" src="images/Icon-Whats.png" style="transform: translateX(5px) translateY(6px); ">
+                                            </h5>
+                                        </a>
+                                    </form>
+
+                                </div>
+                                <div class="form-container sign-in-container ">
+
+                                    <div class="container">
+                                        <br>
+                                        <div class="center-align">
+                                            <img class="responsive-img" src="images/Enviado.png" width="300px">
+                                        </div>
+                                        <h2 class="center align" style="font-weight: 700; color: #263238;">¡GRACIAS!</h2>
+                                        <p style="color: #263238;" class="center-align">por contactarnos, le responderemos a la brevedad Una vez que su mensaje sea recibido.</p>
+                                        <div class="center-align">
+                                            <a class="waves-effect waves-light btn orange" href="index.html">ir al inicio</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay-container ">
+                                    <div class="overlay">
+                                        <div class="overlay-panel overlay-left">
+                                            <h4 class="white-text" style="font-weight: 300;">Atención a clientes y soporte técnico</h4>
+                                            <p>Si tienes algún problema con la plataforma, ponte en contacto con nosotros
+                                            </p>
+                                            <br>
+                                            <button class="waves-effect waves-light btn" id="signIn">Crear ticket de soporte</button>
+                                        </div>
+                                        <div class="overlay-panel overlay-right ">
+                                            <h4 class="white-text center-align" style="font-weight: 300;">Alianzas y ventas
+                                            </h4>
+                                            <p>Ponte en contacto con nosotros para más información sobre ventas
+                                            </p>
+                                            <br>
+                                            <button class="waves-effect waves-light btn" id="signUp">Alianzas y ventas
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section valign-wrapper white _fondo1 hide-on-med-and-up" style="padding-top: 64px;">
+                <div class="container " style="margin: auto;">
+                    <div class="row ">
+
+
+                        <div class="card gradinet-color  z-depth-3" style="margin-top: 0px; border-radius: 10px;">
+                            <div class="card-content white-text" style=" padding-top: 10px;">
+                            </div>
+                            <div class="card-tabs">
+                                <ul class="tabs tabs-fixed-width tabs-transparent">
+                                    <li class="tab"><a class="active" href="#test1">Iniciar sesion</a></li>
+                                    <li class="tab"><a href="#test2">Registrarse</a></li>
+                                    <li class="indicator" style="left: 0px; right: 233px;"></li>
+                                </ul>
+                            </div>
+                            <div class="card-content white" style="border-radius: 0 0 10px 10px;">
+                                <div id="test1">
+                                    <div class="form-container1 ">
+                                        <div class="center-align">
+                                            <h2 class="h2">Iniciar sesion</h2>
+                                            <p>ingresa los datos de tu cuenta XpertCAD</p>
+
+                                        </div>
+                                        <div class="row">
+                                            <form class="col s12">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="Correo electronico" id="email" type="email" class="validate">
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="contraseña" id="password" type="password" class="validate">
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="center-align">
+                                                    <a href="#" target="_blank " class=" blue-text text-darken-2">Olvide mi contraseña</a>
+                                                </div>
+                                                <br>
+                                                <button class="waves-effect waves-light btn orange darken-3 col s12">Iniciar sesión</button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test2">
+                                    <div class="form-container1">
+                                        <div class="center-align">
+                                            <h2 class="h2">Registrarse</h2>
+                                            <p>Ingresa tus datos para registrate</p>
+                                        </div>
+                                        <div class="row">
+                                            <form class="col s12">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="Nombre" id="first_name" type="text" class="validate">
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="Apellidos" id="last_name" type="text" class="validate">
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="contraseña" id="password" type="password" class="validate">
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="Telefono" id="icon_telephone" type="tel" class="validate">
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="Correo electronico" id="email" type="email" class="validate">
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <button class="waves-effect waves-light btn yellow darken-3 col s12">Registrarse</button>
+                                            </form>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="page-footer ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col s6 m3 ">
+                    <img class="materialize-logo responsive-img " src="images/Xpertcad.png " width="200px " alt=" XpertCAD ">
+                    <p>Desarrollado por el equipo XpertCAD<sup>&#174;</sup></p>
+                </div>
+                <div class="col s6 m3 ">
+                    <h5>Acerca de</h5>
+                    <ul>
+                        <li><a href="Nostros.html ">Nosotros</a></li>
+
+                    </ul>
+                </div>
+                <div class="col s6 m3 ">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><a target="_blank " href="https://api.whatsapp.com/send?phone=521 442 114 5914&text=Hola!%20Quiero%20contactarme%20con%20ustedes! ">Whatsapp</a></li>
+
+                    </ul>
+                </div>
+                <div class="col s6 m3 ">
+                    <h5>Redes sociales</h5>
+                    <ul>
+                        <li>
+                            <a target="_blank " href="https://www.facebook.com/xpertcad "><i class="icon-social-facebook grey-text "></i> Facebook</a>
+                        </li>
+                        <li><a target="_blank " href="https://www.instagram.com/xpertcad/ "><i class="icon-social-instagram grey-text "></i> Instagram</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- Scripts -->
+
+    <script src="js/Login.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js "></script>
+    <script src="js/materialize.min.js "></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", init());
+
+        var onloadCallback = function() {
+            var cap1 = grecaptcha.render('capVentas', {
+                'sitekey': '6LfoQrgZAAAAAMsJUhDdRsJFx_5yIaDACGK9enVG'
+            });
+            jQuery('#capTicket').attr('data-widget-id', cap1);
+            var widgetId = grecaptcha.render('capTicket', {
+                'sitekey': '6LfoQrgZAAAAAMsJUhDdRsJFx_5yIaDACGK9enVG'
+            });
+            jQuery('#capVentas').attr('data-widget-id', widgetId);
+        };
+
+        function init() {
+
+            $(".sendMail").on("click", function(event) {
+                //send mail
+                var valueForm = event.currentTarget.attributes[1].value;
+                var form = $('#' + valueForm);
+                var errorCapta = validateCapta(valueForm);
+                if (errorCapta) {
+                    $('#' + errorCapta).text("*El recaptacha es requerido");
+                    return;
+                } else {
+                    $('#errorVentas').text("");
+                    $('#errorTicket').text("");
+                }
+
+                if (validateForm(form)) {
+                    return;
+                }
+                $(".sendMail").css("pointer-events", "none")
+                var data = form.serialize();
+                sendMail(data, event);
+            });
+        }
+
+        function sendMail(data, event) {
+            const path = "https://accounts.xpertcad.com";
+            if (data == undefined || data.length < 45 || typeof event.isDefaultPrevented != "function") {
+                return;
+            }
+            $.ajax({
+                url: path + "/home/sendMail",
+                type: 'POST',
+                dataType: 'JSON',
+                data: data,
+                success: function(data) {
+                    Materialize.toast("Se envio correctamente tu mensaje.", 5000);
+                    setTimeout(function() {
+                        window.location.href = "https://xpertcad.com";
+                    }, 5000);
+                },
+                error: function(data) {
+                    Materialize.toast("Hubo un problema, intenta mas tarde.", 5000);
+                    setTimeout(function() {
+                        window.location.href = "https://xpertcad.com";
+                    }, 5000);
+                }
+            });
+        }
+
+        function validateForm(form) {
+            //  console.log(form[0]);
+            var arrValidate = [];
+            var items = form[0];
+            Array.from(items).forEach(function(item) {
+                if (item.classList.contains('validate')) {
+                    if (item.value == "") {
+                        arrValidate.push(false)
+                        item.setCustomValidity("El campo es requerido");
+                        item.reportValidity();
+                    } else {
+                        arrValidate.push(true)
+                        item.classList.remove('invalid');
+                        item.classList.add('valid');
+                        item.setCustomValidity('');
+                        item.reportValidity();
+                    }
+                }
+            });
+            return arrValidate.includes(false);
+        }
+
+        function validateCapta(typeForm) {
+            if (typeForm == "formVentas" && grecaptcha.getResponse(jQuery('#capTickect').attr('data-widget-id')) == "") {
+                return "errorVentas"
+            }
+            if (typeForm == "formTicket" && grecaptcha.getResponse(jQuery('#capVentas').attr('data-widget-id')) == "") {
+                return "errorTicket"
+            }
+            return false;
+        }
+
+        function onSubmit(token) {
+            // document.getElementById("demo-form").submit();
+        }
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+</body>
+
+</html>
+
+</html>
