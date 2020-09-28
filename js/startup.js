@@ -909,10 +909,22 @@ $('.tabs-vertical').on('click', 'li', function() {
     $(this).addClass('active').css({ 'height': $(this).find('div').outerHeight() });
 });
 
-$(window).resize(function() {
-    $('.active').css({ 'height': $('.active').find('div').outerHeight() });
-});
+
 
 $(document).ready(function() {
     $('.parallax').parallax();
+});
+
+// move next carousel
+$('.moveNextCarousel').click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('next');
+});
+
+// move prev carousel
+$('.movePrevCarousel').click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('prev');
 });

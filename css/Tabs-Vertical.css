@@ -14,9 +14,9 @@
 }
 
 .tabs-vertical .tab h5 {
-    color: rgb(209, 209, 209);
+    color: rgb(46, 46, 46);
     margin: 1px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .tabs-vertical .indicator {
@@ -54,9 +54,10 @@
 }
 
 .tabs-vertical ul li.active h5 {
-    color: #fff;
+    color: #ff8f00;
     font-weight: 500;
-    width: 100px;
+    width: 0px;
+    height: 40px;
 }
 
 .tabs-vertical ul li.active>div {

@@ -1,193 +1,547 @@
-.masked {
-    display: block;
-    max-width: 150%;
-    height: 550px;
-    -webkit-mask-image: url(https://i.ibb.co/QY9JRNx/Black.png);
-    mask-image: url(https://i.ibb.co/QY9JRNx/Black.png);
-    -webkit-mask-position: center center, bottom right;
-    mask-position: center center, bottom right;
-    -webkit-mask-repeat: no-repeat, no-repeat;
-    mask-repeat: no-repeat, no-repeat;
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
-}
-
-.add {
-    -webkit-mask-composite: source-over;
-    mask-composite: add;
-}
-
-.image-container {
-    max-width: 150%;
-    height: 550px;
-    background-size: 100%;
-    -webkit-filter: drop-shadow( 0px 10px 1px rgba(0, 0, 0, 0.75));
-    filter: drop-shadow(0 10px 1px rgba(0, 0, 0, 0.75));
-}
-
-.underline {
-    position: relative;
-}
-
-.underline::before {
-    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.7rem;
-    position: absolute;
-}
-
-.underline::after {
-    content: '';
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    top: 140%;
-    left: 0;
-    z-index: -1;
-    transition: transform 0.5s;
-    transform: scaleX(1);
-    transform-origin: right;
-}
-
-.underline:hover::after {
-    transform: scaleX(0);
-    transform-origin: left;
-}
-
-
-/*underline2**/
-
-.underline2 {
-    position: relative;
-}
-
-.underline2::before {
-    background: linear-gradient(120deg, #607d8b 0%, #3d505a 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.7rem;
-    position: absolute;
-}
-
-.underline2::after {
-    content: '';
-    background-image: linear-gradient(120deg, #607d8b 0%, #3d505a 100%);
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    top: 140%;
-    left: 0;
-    z-index: -1;
-    transition: transform 0.5s;
-    transform: scaleX(1);
-    transform-origin: right;
-}
-
-.underline2:hover::after {
-    transform: scaleX(0);
-    transform-origin: left;
-}
-
-
-/*underline3**/
-
-.underline3 {
-    position: relative;
-}
-
-.underline3::before {
-    background: linear-gradient(120deg, #b71c1c 0%, #b71c1c 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.7rem;
-    position: absolute;
-}
-
-.underline3::after {
-    content: '';
-    background-image: linear-gradient(120deg, #b71c1c 0%, #9e0a0a 100%);
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    top: 140%;
-    left: 0;
-    z-index: -1;
-    transition: transform 0.5s;
-    transform: scaleX(1);
-    transform-origin: right;
-}
-
-.underline3:hover::after {
-    transform: scaleX(0);
-    transform-origin: left;
-}
-
-
-/*underline4**/
-
-.underline4 {
-    position: relative;
-}
-
-.underline4::before {
-    background: linear-gradient(120deg, #0277bd 0%, #0277bd 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.7rem;
-    position: absolute;
-}
-
-.underline4::after {
-    content: '';
-    background-image: linear-gradient(120deg, #0277bd 0%, #0277bd 100%);
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    top: 140%;
-    left: 0;
-    z-index: -1;
-    transition: transform 0.5s;
-    transform: scaleX(1);
-    transform-origin: right;
-}
-
-.underline4:hover::after {
-    transform: scaleX(0);
-    transform-origin: left;
-}
-
-
-/*underline4**/
-
-.underline5 {
-    position: relative;
-}
-
-.underline5::before {
-    background: linear-gradient(120deg, #2e3031 0%, #2e3031 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.7rem;
-    position: absolute;
-}
-
-.underline5::after {
-    content: '';
-    background-image: linear-gradient(120deg, #2e3031 0%, #2e3031 100%);
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    top: 140%;
-    left: 0;
-    z-index: -1;
-    transition: transform 0.5s;
-    transform: scaleX(1);
-    transform-origin: right;
-}
-
-.underline5:hover::after {
-    transform: scaleX(0);
-    transform-origin: left;
-}
+    .masked {
+        display: block;
+        max-width: 150%;
+        height: 550px;
+        -webkit-mask-image: url(https://i.ibb.co/QY9JRNx/Black.png);
+        mask-image: url(https://i.ibb.co/QY9JRNx/Black.png);
+        -webkit-mask-position: center center, bottom right;
+        mask-position: center center, bottom right;
+        -webkit-mask-repeat: no-repeat, no-repeat;
+        mask-repeat: no-repeat, no-repeat;
+        -webkit-mask-size: 100%;
+        mask-size: 100%;
+    }
+    
+    .add {
+        -webkit-mask-composite: source-over;
+        mask-composite: add;
+    }
+    
+    .image-container {
+        max-width: 150%;
+        height: 550px;
+        background-size: 100%;
+        -webkit-filter: drop-shadow( 0px 10px 1px rgba(0, 0, 0, 0.75));
+        filter: drop-shadow(0 10px 1px rgba(0, 0, 0, 0.75));
+    }
+    
+    .underline {
+        position: relative;
+    }
+    
+    .underline::before {
+        background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.7rem;
+        position: absolute;
+    }
+    
+    .underline::after {
+        content: '';
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 140%;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    
+    .underline:hover::after {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    /*underline2**/
+    
+    .underline2 {
+        position: relative;
+    }
+    
+    .underline2::before {
+        background: linear-gradient(120deg, #607d8b 0%, #3d505a 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.7rem;
+        position: absolute;
+    }
+    
+    .underline2::after {
+        content: '';
+        background-image: linear-gradient(120deg, #607d8b 0%, #3d505a 100%);
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 140%;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    
+    .underline2:hover::after {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    /*underline3**/
+    
+    .underline3 {
+        position: relative;
+    }
+    
+    .underline3::before {
+        background: linear-gradient(120deg, #b71c1c 0%, #b71c1c 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.7rem;
+        position: absolute;
+    }
+    
+    .underline3::after {
+        content: '';
+        background-image: linear-gradient(120deg, #b71c1c 0%, #9e0a0a 100%);
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 140%;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    
+    .underline3:hover::after {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    /*underline4**/
+    
+    .underline4 {
+        position: relative;
+    }
+    
+    .underline4::before {
+        background: linear-gradient(120deg, #0277bd 0%, #0277bd 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.7rem;
+        position: absolute;
+    }
+    
+    .underline4::after {
+        content: '';
+        background-image: linear-gradient(120deg, #0277bd 0%, #0277bd 100%);
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 140%;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    
+    .underline4:hover::after {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    /*underline4**/
+    
+    .underline5 {
+        position: relative;
+    }
+    
+    .underline5::before {
+        background: linear-gradient(120deg, #2e3031 0%, #2e3031 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.7rem;
+        position: absolute;
+    }
+    
+    .underline5::after {
+        content: '';
+        background-image: linear-gradient(120deg, #2e3031 0%, #2e3031 100%);
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 120%;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform: scaleX(.21);
+        transform-origin: center;
+    }
+    
+    .underline5:hover::after {
+        transform: scaleX(.6);
+        transform-origin: center;
+    }
+    /*------------------------------------*/
+    /*------ Basic Underline Styles ------*/
+    /*------------------------------------*/
+    
+    .normal-underline,
+    .custom-underline {
+        position: relative;
+        display: inline-block;
+        font-weight: 400;
+        font-size: 34px;
+        text-align: center;
+    }
+    
+    .normal-underline,
+    .normal-underline:hover {
+        color: #444;
+        text-decoration: underline;
+    }
+    
+    .custom-underline,
+    .custom-underline:hover,
+    .custom-underline:focus,
+    .custom-underline:active {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .custom-underline::after {
+        content: "";
+        position: absolute;
+    }
+    /*------------------------------------*/
+    /*--- Individual Custom Underlines ---*/
+    /*------------------------------------*/
+    /*--- Green Box (box-c) ---*/
+    
+    .box-c .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 60%;
+        left: 0%;
+        background-color: #212121;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-c:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: #ef6c00;
+        transition: 0.5s ease all;
+    }
+    
+    .box-d .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 30%;
+        left: 0%;
+        background-color: #212121;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-d:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: #607d8b;
+        transition: 0.5s ease all;
+    }
+    
+    .box-e .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 30%;
+        left: 0%;
+        background-color: #212121;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-e:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: #b71c1c;
+        transition: 0.5s ease all;
+    }
+    
+    .box-f .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 30%;
+        left: 0%;
+        background-color: #212121;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-f:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: #0277bd;
+        transition: 0.5s ease all;
+    }
+    
+    .box-doc .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 30%;
+        left: 0%;
+        background-color: orange;
+        ;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-doc:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: orange;
+        transition: 0.5s ease all;
+    }
+    
+    .box-doc2 .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 30%;
+        left: 35%;
+        background-color: orange;
+        ;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-doc3:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: orange;
+        transition: 0.5s ease all;
+    }
+    
+    .box-doc3 .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 30%;
+        left: 35%;
+        background-color: orange;
+        ;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-doc2:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: orange;
+        transition: 0.5s ease all;
+    }
+    
+    .box-doc4 .custom-underline::after {
+        top: 115%;
+        height: 2px !important;
+        width: 30%;
+        left: 35%;
+        background-color: #0377be;
+        transition: 0.4s ease-out all .1s;
+    }
+    
+    .box-doc4:hover .custom-underline::after {
+        width: 100%;
+        left: 0%;
+        background-color: #0377be;
+        transition: 0.5s ease all;
+    }
+    
+    .margin-text {
+        margin: 10px;
+    }
+    
+    .center-element {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .center-element2 {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .center-element3 {
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .center-element4 {
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .h4-1 {
+        font-weight: 500;
+    }
+    
+    .p-1 {
+        font-weight: 36px;
+        font-weight: 300;
+    }
+    
+    .icon-p {
+        transform: translateY(5px);
+        font-weight: 66px;
+    }
+    
+    .tabs-v {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    
+    .text-rep {
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .table-text {
+        font-size: 12px;
+        font-weight: 300;
+    }
+    
+    .td-text-m {
+        font-size: 13px;
+        font-weight: 700;
+    }
+    
+    .width-table {
+        width: 150px;
+    }
+    
+    .width-table-text {
+        width: 150px;
+    }
+    
+    .height-th {
+        padding: 1px 1px;
+    }
+    
+    .td-all {
+        padding: 1px 1px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    
+    .line-1:after {
+        content: '';
+        background-color: red;
+        height: 2px;
+        display: block;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 3%;
+    }
+    
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        z-index: 9999;
+        pointer-events: none;
+    }
+    
+    .sample {
+        font-family: 'ModernLove-RegularSlanted';
+    }
+    
+    .candara {
+        font-family: 'Candara';
+    }
+    
+    .flip-card {
+        background-color: transparent;
+        perspective: 1000px;
+        /* Remove this if you don't want the 3D effect */
+    }
+    /* This container is needed to position the front and back side */
+    
+    .flip-card-inner {
+        transition: transform 1.8s;
+        transform-style: preserve-3d;
+    }
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    /* Position the front and back side */
+    
+    .flip-card-front,
+    .flip-card-back {
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+    /* Style the front side (fallback if image is missing) */
+    
+    .flip-card-front {
+        background-color: transparent;
+        color: black;
+    }
+    /* Style the back side */
+    
+    .flip-card-back {
+        background-color: transparent;
+        transform: rotateY(180deg);
+    }
+    
+    .middle-indicator {
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    
+    a.middle-indicator-text {
+        color: white !important;
+    }
+    
+    .middle-indicator2 {
+        position: absolute;
+        top: 91%;
+        transform: translateX(-45%);
+    }
+    
+    a.middle-indicator-text2 {
+        color: rgb(246, 0, 0) !important;
+    }
+    
+    .content-indicator {
+        width: 74px;
+        height: 54px;
+        background: none;
+        vertical-align: middle;
+        display: flex;
+        text-align: center;
+    }
+    
+    .indicators {
+        visibility: hidden;
+    }
+    
+    .btn2 {
+        border: none;
+        border-radius: 2px;
+        display: inline-block;
+        height: 36px;
+        line-height: 36px;
+        padding: 0 2rem;
+        vertical-align: middle;
+        -webkit-tap-highlight-color: transparent;
+    }
